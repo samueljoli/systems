@@ -33,6 +33,10 @@
       # Used for backwards compatibility, please read the changelog before changing.
       # $ darwin-rebuild changelog
       system.stateVersion = 5;
+      # If you have no intention of upgrading to macOS Sequoia 15, or already
+      # have a custom UID range that you know is compatible with Sequoia, you
+      # can disable this check by setting:
+      ids.uids.nixbld = 300;
 
       # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "aarch64-darwin";
