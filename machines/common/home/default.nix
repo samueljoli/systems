@@ -19,5 +19,14 @@
         throw "What's the home directory for this OS?";
 
     stateVersion = "23.11";
+
+    packages = import ./packages { inherit pkgs; } ++ [
+      # inputs.baouncer.packages.${system}.default
+    ];
+
+    programs = import ./programs {
+      inherit pkgs;
+      inherit inputs;
+    };
   };
 }

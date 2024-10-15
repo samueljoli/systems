@@ -18,20 +18,22 @@
       url = "github:homebrew/homebrew-bundle";
       flake = false;
     };
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
     inputs:
     let
-      # Returns an iterable of sets w/ keys: [name, darwinConfiguration]
       machines = import ./machines {
         inherit inputs;
         userName = "sjoli";
       };
     in
-    # Returns an attribute set representing output
     machines.forEach (machine: {
       darwinConfigurations.${machine.name} = machine.darwinConfiguration inputs;
-      # homeConfigurations.${machine.name} = machine.homeConfiguration inputs;
+      homeConfigurations.${machine.name} = machine.homeConfiguration inputs;
     });
 }

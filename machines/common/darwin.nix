@@ -24,9 +24,9 @@
       "shortcat"
       "docker"
       "1password"
-      "arc"
+      # "arc"
       "tableplus"
-      "postman"
+      # "postman"
     ];
   };
 }

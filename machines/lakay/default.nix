@@ -20,6 +20,15 @@ rec {
   homeConfiguration =
     inputs:
     inputs.home-manager.lib.homeManagerConfiguration rec {
-      #
+      pkgs = inputs.nixpkgs.legacyPackages.${platform};
+
+      modules = [
+        ../common/home/default.nix
+      ];
+
+      extraSpecialArgs = {
+        inherit inputs;
+        inherit userName;
+      };
     };
 }
