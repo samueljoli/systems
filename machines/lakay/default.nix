@@ -9,7 +9,7 @@ rec {
       modules = [
         inputs.nix-homebrew.darwinModules.nix-homebrew
         ./darwin-configuration.nix
-        ../common
+        ../common/darwin.nix
       ];
       specialArgs = {
         inherit inputs;
