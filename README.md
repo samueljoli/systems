@@ -1,19 +1,21 @@
-# Approach
+> Nix flake for declaratively managing and configuring all of my systems.
 
-## Entrypoint
-- flake.nix
+![macOS](https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=macos&logoColor=F0F0F0)
+![Raspberry Pi](https://img.shields.io/badge/-Raspberry_Pi-C51A4A?style=for-the-badge&logo=Raspberry-Pi)
 
-This is meant to be global source of truth for machines that I work with. This includes:
-1. My personal machine
-2. Machines i use for self hosting
+## Install
+```bash
+curl --remote-name https://raw.githubusercontent.com/samueljoli/lakay-darwin/main/scripts/init.sh
+```
 
-## Inspo:
--  https://github.com/noib3/dotfiles/blob/176d913c4fb15ab8b7f41bbc787417f8dfe3bccd/flake.nix
+## Run
+```bash
+sh init.sh 2>&1 | tee ~/macOS-dev.log
+```
+> [!IMPORTANT]
+> **installs**:
+> - `nix` using Determinate System's [`installer`](https://github.com/DeterminateSystems/nix-installer)
+> - [`nix-darwin`](https://github.com/LnL7/nix-darwin)
 
-
-
-# The approach I'm taking to learn nix
-- I started with how I wanted my nix.flake file to read. It should easily tell the narrative that aligns with
-- my approach. Using psuedocode, I outlined how I wanted it to read and from there I started looking at the nix
-- reference manual for the API that would support the narrative. I think this helps in me not being overwhelmed,
-- Humans want a close approximation to what they are trying to work on.
+### See also
+[`:wiki`](https://github.com/samueljoli/lakay-darwin/wiki)
