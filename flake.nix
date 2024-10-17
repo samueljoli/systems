@@ -27,13 +27,58 @@
   outputs =
     inputs:
     let
+      system = "aarch64-darwin";
+      pkgs = import inputs.nixpkgs {
+        inherit system;
+        overlays = [
+          (final: prev: {
+            rebuild = final.writeShellScriptBin "rebuild" ''
+              #!${final.bash}/bin/bash
+
+              set -euo pipefail
+
+              usage() {
+                echo "Usage: rebuild [system|home|all] [--options]"
+                exit 1
+              }
+
+              if [ $# -lt 1 ]; then
+                usage
+              fi
+
+              subcommand="$1"
+              shift
+
+              case "$subcommand" in
+                system)
+                  exec darwin-rebuild switch --flake ${inputs.self}
+                  ;;
+                home)
+                  exec home-manager switch --flake ${inputs.self}
+                  ;;
+                *)
+                  echo "Error: Unknown subcommand '$subcommand'"
+                  usage
+                  ;;
+              esac
+            '';
+          })
+        ];
+      };
+
+      userName = "sjoli";
+
       machines = import ./machines {
         inherit inputs;
-        userName = "sjoli";
+        inherit userName;
       };
     in
     machines.forEach (machine: {
       darwinConfigurations.${machine.name} = machine.darwinConfiguration inputs;
-      homeConfigurations.${machine.name} = machine.homeConfiguration inputs;
-    });
+      homeConfigurations.${userName} = machine.homeConfiguration inputs;
+    }) // {
+      packages.${system} = rec {
+        inherit (pkgs) rebuild;
+      };
+    };
 }

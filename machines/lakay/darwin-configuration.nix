@@ -1,6 +1,8 @@
 {pkgs, inputs, platform, ...}:
 {
-  environment.systemPackages = [ pkgs.vim ];
+  environment.systemPackages = with pkgs; [
+    home-manager
+  ];
 
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
