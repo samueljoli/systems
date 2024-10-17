@@ -20,7 +20,13 @@
   homebrew = {
     enable = true;
     casks = [
+      "tailscale"
       "shortcat"
+      "docker"
+      "1password"
+      # "arc"
+      "tableplus"
+      # "postman"
     ];
   };
 }

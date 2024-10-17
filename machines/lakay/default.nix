@@ -8,8 +8,9 @@ rec {
       # inherit platform;
       modules = [
         inputs.nix-homebrew.darwinModules.nix-homebrew
+        inputs.home-manager.darwinModules.home-manager
         ./darwin-configuration.nix
-        ../common/darwin.nix
+        ../../modules/darwin/default.nix
       ];
       specialArgs = {
         inherit inputs;
@@ -20,6 +21,16 @@ rec {
   homeConfiguration =
     inputs:
     inputs.home-manager.lib.homeManagerConfiguration rec {
-      #
+      pkgs = inputs.nixpkgs.legacyPackages.${platform};
+
+      modules = [
+        ../../modules/home-manager/default.nix
+      ];
+
+      extraSpecialArgs = {
+        inherit inputs;
+        inherit userName;
+        inherit platform;
+      };
     };
 }
