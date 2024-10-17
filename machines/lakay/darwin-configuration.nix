@@ -4,6 +4,10 @@
     home-manager
   ];
 
+  environment.loginShell = "${pkgs.zsh}/bin/zsh";
+
+  environment.shells = [ pkgs.zsh ];
+
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
   # nix.package = pkgs.nix;

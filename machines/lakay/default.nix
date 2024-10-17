@@ -24,7 +24,7 @@ rec {
       pkgs = inputs.nixpkgs.legacyPackages.${platform};
 
       modules = [
-        ../common/home/default.nix
+        ../../modules/home-manager/default.nix
       ];
 
       extraSpecialArgs = {
