@@ -78,11 +78,15 @@
   outputs =
     inputs:
     let
-      rebuild = pkgs.writeShellScriptBin "rebuild" (builtins.readFile ./scripts/rebuild.sh);
       userName = "sjoli";
       system = "aarch64-darwin";
-      pkgs = import inputs.nixpkgs { inherit system; };
 
+      # scripts
+      rebuild = pkgs.writeShellScriptBin "rebuild" (builtins.readFile ./scripts/rebuild.sh);
+      bootstrapScript = builtins.replaceStrings ["@username@"] [userName] (builtins.readFile ./scripts/bootstrap.sh);
+      bootstrap = pkgs.writeShellScriptBin "bootstrap" bootstrapScript;
+
+      pkgs = import inputs.nixpkgs { inherit system; };
       machines = import ./machines {
         inherit inputs;
         inherit userName;
@@ -92,6 +96,18 @@
       darwinConfigurations.${machine.name} = machine.darwinConfiguration inputs;
       homeConfigurations.${userName} = machine.homeConfiguration inputs;
     }) // {
+      # expose rebuild script in this environment
       devShells.${system}.default = pkgs.mkShell { packages = with pkgs; [rebuild]; };
+
+      # enables running bootstrap script from nix
+      packages.${system} = {
+        inherit bootstrap;
+      };
+      apps.${system} = {
+        default = {
+          type = "app";
+          program = "${inputs.self.packages.${system}.bootstrap}/bin/bootstrap";
+        };
+      };
     };
 }
