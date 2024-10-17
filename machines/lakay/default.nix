@@ -30,6 +30,7 @@ rec {
       extraSpecialArgs = {
         inherit inputs;
         inherit userName;
+        inherit platform;
       };
     };
 }

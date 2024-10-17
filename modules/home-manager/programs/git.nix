@@ -4,7 +4,6 @@
   enable = true;
   userName = "Samuel Joli";
   userEmail = "samuel.joli.ftn@gmail.com";
-  aliases = (import ./aliases.nix { inherit pkgs; }).git;
   delta = {
     enable = true;
   };
