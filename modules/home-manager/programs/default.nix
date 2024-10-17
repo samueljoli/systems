@@ -5,7 +5,7 @@
     enable = true;
   };
 
-  # git = import ./git.nix { inherit pkgs; };
+  git = import ./git.nix { inherit pkgs; };
 
   direnv = {
     enable = true;
@@ -16,19 +16,18 @@
     };
   };
 
-  # neovim = import ./neovim/default.nix {
-  #   inherit pkgs;
-  #   inherit inputs;
-  # };
-  #
+  neovim = import ./neovim/default.nix {
+    inherit pkgs;
+    inherit inputs;
+  };
+
   # kitty = import ./kitty/default.nix {inherit pkgs; };
-  #
-  # starship = import ./starship.nix { inherit pkgs; };
-  #
+  starship = import ./starship.nix { inherit pkgs; };
+
   zsh = import ./zsh/default.nix { inherit pkgs; };
-  #
-  # zoxide = {
-  #   enable = true;
-  #   enableZshIntegration = true;
-  # };
+
+  zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+  };
 }
