@@ -94,7 +94,7 @@
       };
     in
     machines.forEach (machine: {
-      darwinConfigurations.${machine.name} = machine.darwinConfiguration inputs;
+      darwinConfigurations.${machine.hostname} = machine.darwinConfiguration inputs;
       homeConfigurations.${username} = machine.homeConfiguration inputs;
     }) // {
       # expose rebuild script in this environment

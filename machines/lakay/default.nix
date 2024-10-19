@@ -1,17 +1,20 @@
 { inputs, username, system, ...}:
 rec {
-  name = "Samuels-MacBook-Air-2";
+  hostname = "lakay-air";
   darwinConfiguration = 
     inputs:
     inputs.nix-darwin.lib.darwinSystem {
       modules = [
         inputs.nix-homebrew.darwinModules.nix-homebrew
         inputs.home-manager.darwinModules.home-manager
-        ./darwin-configuration.nix
-        ../../modules/darwin/default.nix
+        ../../modules/darwin/nix-core.nix
+        ../../modules/darwin/host-users.nix
+        ../../modules/darwin/system.nix
+        ../../modules/darwin/brew.nix
       ];
       specialArgs = {
         inherit inputs;
+        hostname = hostname;
         username = username;
         system = system;
       };
