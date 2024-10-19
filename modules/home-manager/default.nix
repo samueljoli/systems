@@ -2,27 +2,27 @@
   config,
   pkgs,
   inputs,
-  userName,
-  platform,
+  username,
+  system,
   lib,
   ...
 }:
 {
   home = {
-    username = userName;
+    username = username;
 
     homeDirectory =
       if pkgs.stdenv.isDarwin then
-        "/Users/${userName}"
+        "/Users/${username}"
       else if pkgs.stdenv.isLinux then
-        "/home/${userName}"
+        "/home/${username}"
       else
         throw "What's the home directory for this OS?";
 
     stateVersion = "23.11";
 
     packages = import ./packages { inherit pkgs; } ++ [
-      inputs.baouncer.packages.${platform}.default
+      inputs.baouncer.packages.${system}.default
     ];
   };
 

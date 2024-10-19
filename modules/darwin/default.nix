@@ -1,11 +1,11 @@
-{pkgs, inputs, userName, ...}:
+{pkgs, inputs, username, ...}:
 {
   nix-homebrew = {
     enable = true;
 
     enableRosetta = true;
 
-    user = userName;
+    user = username;
 
     taps = {
       "homebrew/homebrew-core" = inputs.homebrew-core;

@@ -1,4 +1,4 @@
-{pkgs, inputs, platform, ...}:
+{pkgs, inputs, sytem, ...}:
 {
   environment.systemPackages = with pkgs; [
     home-manager
@@ -31,5 +31,5 @@
   ids.uids.nixbld = 300;
 
   # The platform the configuration will be used on.
-  nixpkgs.hostPlatform = platform;
+  nixpkgs.hostPlatform = system;
 }

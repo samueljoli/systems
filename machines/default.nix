@@ -1,8 +1,9 @@
-{ inputs, userName }:
+{ inputs, username, system }:
 let
   lakay = import ./lakay {
     inherit inputs;
-    inherit userName;
+    inherit username;
+    inherit system;
   };
 
   hosts = [

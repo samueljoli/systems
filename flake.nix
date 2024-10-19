@@ -78,23 +78,24 @@
   outputs =
     inputs:
     let
-      userName = "sjoli";
+      username = "sjoli";
       system = "aarch64-darwin";
 
       # scripts
       rebuild = pkgs.writeShellScriptBin "rebuild" (builtins.readFile ./scripts/rebuild.sh);
-      bootstrapScript = builtins.replaceStrings ["@username@"] [userName] (builtins.readFile ./scripts/bootstrap.sh);
+      bootstrapScript = builtins.replaceStrings ["@username@"] [username] (builtins.readFile ./scripts/bootstrap.sh);
       bootstrap = pkgs.writeShellScriptBin "bootstrap" bootstrapScript;
 
       pkgs = import inputs.nixpkgs { inherit system; };
       machines = import ./machines {
         inherit inputs;
-        inherit userName;
+        inherit username;
+        inherit system;
       };
     in
     machines.forEach (machine: {
       darwinConfigurations.${machine.name} = machine.darwinConfiguration inputs;
-      homeConfigurations.${userName} = machine.homeConfiguration inputs;
+      homeConfigurations.${username} = machine.homeConfiguration inputs;
     }) // {
       # expose rebuild script in this environment
       devShells.${system}.default = pkgs.mkShell { packages = with pkgs; [rebuild]; };
