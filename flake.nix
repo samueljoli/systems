@@ -22,7 +22,11 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-      plugin-vim-kitty = {
+    nil = {
+      url = "github:oxalica/nil/c8e8ce72442a164d89d3fdeaae0bcc405f8c015a";
+      flake = true;
+    };
+    plugin-vim-kitty = {
       url = "github:knubie/vim-kitty-navigator/20abf8613aa228a5def1ae02cd9da0f2d210352a";
       flake = false;
     };
@@ -87,18 +91,23 @@
       bootstrap = pkgs.writeShellScriptBin "bootstrap" bootstrapScript;
 
       pkgs = import inputs.nixpkgs { inherit system; };
+      nix-lsp-server = inputs.nil.packages.${system}.nil;
+
       machines = import ./machines {
         inherit inputs;
         inherit username;
         inherit system;
       };
+
     in
     machines.forEach (machine: {
       darwinConfigurations.${machine.hostname} = machine.darwinConfiguration inputs;
       homeConfigurations.${username} = machine.homeConfiguration inputs;
     }) // {
       # expose rebuild script in this environment
-      devShells.${system}.default = pkgs.mkShell { packages = with pkgs; [rebuild]; };
+      devShells.${system}.default = pkgs.mkShell {
+        packages = with pkgs; [rebuild nix-lsp-server];
+      };
 
       # enables running bootstrap script from nix
       packages.${system} = {
