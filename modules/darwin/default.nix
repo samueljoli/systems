@@ -1,4 +1,9 @@
-{pkgs, inputs, username, ...}:
+{
+  pkgs,
+  inputs,
+  username,
+  ...
+}:
 {
   nix-homebrew = {
     enable = true;

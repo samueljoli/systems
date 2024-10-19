@@ -1,7 +1,12 @@
-{ inputs, username, system, ...}:
+{
+  inputs,
+  username,
+  system,
+  ...
+}:
 rec {
   hostname = "lakay-air";
-  darwinConfiguration = 
+  darwinConfiguration =
     inputs:
     inputs.nix-darwin.lib.darwinSystem {
       modules = [

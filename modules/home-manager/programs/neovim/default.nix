@@ -90,7 +90,7 @@ in
 
     cmp_luasnip
     cmp-nvim-lsp
-    
+
     luasnip
     friendly-snippets
   ];

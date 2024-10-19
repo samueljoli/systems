@@ -87,7 +87,9 @@
 
       # scripts
       rebuild = pkgs.writeShellScriptBin "rebuild" (builtins.readFile ./scripts/rebuild.sh);
-      bootstrapScript = builtins.replaceStrings ["@username@"] [username] (builtins.readFile ./scripts/bootstrap.sh);
+      bootstrapScript = builtins.replaceStrings [ "@username@" ] [ username ] (
+        builtins.readFile ./scripts/bootstrap.sh
+      );
       bootstrap = pkgs.writeShellScriptBin "bootstrap" bootstrapScript;
 
       pkgs = import inputs.nixpkgs { inherit system; };
@@ -103,10 +105,14 @@
     machines.forEach (machine: {
       darwinConfigurations.${machine.hostname} = machine.darwinConfiguration inputs;
       homeConfigurations.${username} = machine.homeConfiguration inputs;
-    }) // {
+    })
+    // {
       # expose rebuild script in this environment
       devShells.${system}.default = pkgs.mkShell {
-        packages = with pkgs; [rebuild nix-lsp-server];
+        packages = with pkgs; [
+          rebuild
+          nix-lsp-server
+        ];
       };
 
       # enables running bootstrap script from nix
@@ -119,5 +125,7 @@
           program = "${inputs.self.packages.${system}.bootstrap}/bin/bootstrap";
         };
       };
+
+      formatter.${system} = inputs.nixpkgs.legacyPackages.${system}.nixfmt-rfc-style;
     };
 }

@@ -1,11 +1,16 @@
-{ pkgs, inputs, system, ... }:
+{
+  pkgs,
+  inputs,
+  system,
+  ...
+}:
 {
   system.stateVersion = 5;
 
   system.activationScripts.postUserActivation.text = ''
-      # activateSettings -u will reload the settings from the database and apply them to the current session,
-      # so we do not need to logout and login again to make the changes take effect.
-      /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
+    # activateSettings -u will reload the settings from the database and apply them to the current session,
+    # so we do not need to logout and login again to make the changes take effect.
+    /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
   '';
 
   # Set Git commit hash for darwin-version.
@@ -18,7 +23,7 @@
 
   environment.loginShell = "${pkgs.zsh}/bin/zsh";
 
-  environment.shells = [pkgs.zsh];
+  environment.shells = [ pkgs.zsh ];
 
   environment.systemPackages = with pkgs; [
     home-manager

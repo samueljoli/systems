@@ -21,7 +21,7 @@
     inherit inputs;
   };
 
-  kitty = import ./kitty/default.nix {inherit pkgs; };
+  kitty = import ./kitty/default.nix { inherit pkgs; };
   starship = import ./starship.nix { inherit pkgs; };
 
   zsh = import ./zsh/default.nix { inherit pkgs; };

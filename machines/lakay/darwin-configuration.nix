@@ -1,4 +1,9 @@
-{pkgs, inputs, sytem, ...}:
+{
+  pkgs,
+  inputs,
+  sytem,
+  ...
+}:
 {
   environment.systemPackages = with pkgs; [
     home-manager
@@ -16,7 +21,7 @@
   nix.settings.experimental-features = "nix-command flakes";
 
   # Create /etc/zshrc that loads the nix-darwin environment.
-  programs.zsh.enable = true;  # default shell on catalina
+  programs.zsh.enable = true; # default shell on catalina
   # programs.fish.enable = true;
 
   # Set Git commit hash for darwin-version.
