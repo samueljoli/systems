@@ -84,17 +84,10 @@
     let
       username = "sjoli";
       system = "aarch64-darwin";
-
-      # scripts
       rebuild = pkgs.writeShellScriptBin "rebuild" (builtins.readFile ./scripts/rebuild.sh);
-      bootstrapScript = builtins.replaceStrings [ "@username@" ] [ username ] (
-        builtins.readFile ./scripts/bootstrap.sh
-      );
-      bootstrap = pkgs.writeShellScriptBin "bootstrap" bootstrapScript;
-
       pkgs = import inputs.nixpkgs { inherit system; };
+      utils = import ./utils { inherit pkgs; };
       nix-lsp-server = inputs.nil.packages.${system}.nil;
-
       machines = import ./machines {
         inherit inputs;
         inherit username;
@@ -115,16 +108,7 @@
         ];
       };
 
-      # enables running bootstrap script from nix
-      packages.${system} = {
-        inherit bootstrap;
-      };
-      apps.${system} = {
-        default = {
-          type = "app";
-          program = "${inputs.self.packages.${system}.bootstrap}/bin/bootstrap";
-        };
-      };
+      apps.${system} = machines.forEach utils.generateApp;
 
       formatter.${system} = inputs.nixpkgs.legacyPackages.${system}.nixfmt-rfc-style;
     };
