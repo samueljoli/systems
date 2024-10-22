@@ -18,6 +18,9 @@
 
   system.defaults.menuExtraClock.Show24Hour = true;
 
+  # system.defaults.dock
+  time.timeZone = "America/New_York";
+
   # Add ability to used TouchID for sudo authentication
   security.pam.enableSudoTouchIdAuth = true;
 
@@ -27,6 +30,12 @@
 
   environment.systemPackages = with pkgs; [
     home-manager
+  ];
+
+  fonts.packages = with pkgs; [
+    roboto-mono
+    font-awesome
+    nerdfonts
   ];
 
   # Create /etc/zshrc that loads the nix-darwin environment.
