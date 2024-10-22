@@ -26,6 +26,8 @@
     ".idea/"
     "*.swp"
     "npm-debug.log"
+    "result"
+    "target"
   ];
   lfs = {
     enable = true;
