@@ -2,7 +2,7 @@
 
 {
   enable = true;
-  theme = "Gruvbox Dark Hard";
+  themeFile = "GruvboxMaterialDarkHard";
   shellIntegration.enableZshIntegration = true;
   extraConfig = ''
     ${builtins.readFile ./kitty.conf}
