@@ -13,8 +13,9 @@ curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix 
 
 ## Bootstrap
 ```bash
-nix run github:samueljoli/systems
+nix run github:samueljoli/systems#machine_name
 ```
+> replace `machine_name` with correct `hostname`.
 
 ### See also
 [`:wiki`](https://github.com/samueljoli/lakay-darwin/wiki)
