@@ -88,6 +88,7 @@
       pkgs = import inputs.nixpkgs { inherit system; };
       utils = import ./utils { inherit pkgs; };
       nix-lsp-server = inputs.nil.packages.${system}.nil;
+      nixfmt-rfc-style = inputs.nixpkgs.legacyPackages.${system}.nixfmt-rfc-style;
       machines = import ./machines {
         inherit inputs;
         inherit username;
@@ -105,11 +106,12 @@
         packages = with pkgs; [
           rebuild
           nix-lsp-server
+          nixfmt-rfc-style
         ];
       };
 
       apps.${system} = machines.forEach utils.generateApp;
 
-      formatter.${system} = inputs.nixpkgs.legacyPackages.${system}.nixfmt-rfc-style;
+      formatter.${system} = nixfmt-rfc-style;
     };
 }
