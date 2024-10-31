@@ -31,7 +31,7 @@
       flake = false;
     };
     neovim-nightly-overlay = {
-      url = "github:nix-community/neovim-nightly-overlay";
+      url = "github:nix-community/neovim-nightly-overlay/f35afbe60a4ff71fd65fec3839fc38943f961951";
     };
     plugin-statuscolumn-nvim = {
       url = "github:JuanBaut/statuscolumn.nvim";
@@ -103,7 +103,7 @@
     // {
       # expose rebuild script in this environment
       devShells.${system}.default = pkgs.mkShell {
-        packages = with pkgs; [
+        packages = [
           rebuild
           nix-lsp-server
           nixfmt-rfc-style
