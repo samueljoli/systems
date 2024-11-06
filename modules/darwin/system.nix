@@ -18,6 +18,10 @@
 
   system.defaults.menuExtraClock.Show24Hour = true;
 
+  system.defaults.NSGlobalDomain.InitialKeyRepeat = 10;
+
+  system.defaults.NSGlobalDomain.KeyRepeat = 1;
+
   # system.defaults.dock
   time.timeZone = "America/New_York";
 
