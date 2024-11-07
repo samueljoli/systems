@@ -18,9 +18,11 @@
 
   system.defaults.menuExtraClock.Show24Hour = true;
 
-  system.defaults.NSGlobalDomain.InitialKeyRepeat = 10;
+  system.defaults.NSGlobalDomain.InitialKeyRepeat = 10; # How long you must hold down the key before it starts repeating.
 
-  system.defaults.NSGlobalDomain.KeyRepeat = 1;
+  system.defaults.NSGlobalDomain.KeyRepeat = 1; # How fast it repeats once it starts.
+
+  system.defaults.dock.wvous-tl-corner = 2; # Hot corner action for top left corner → Mission Control
 
   # system.defaults.dock
   time.timeZone = "America/New_York";
