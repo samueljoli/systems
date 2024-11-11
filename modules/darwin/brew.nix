@@ -34,5 +34,7 @@
     "tableplus"
 
     "zen-browser"
+
+    "little-snitch"
   ];
 }
