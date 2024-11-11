@@ -33,5 +33,6 @@
 
     "tableplus"
 
+    "zen-browser"
   ];
 }
