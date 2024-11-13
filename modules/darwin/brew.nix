@@ -1,5 +1,4 @@
 {
-  pkgs,
   inputs,
   username,
   ...
@@ -38,5 +37,7 @@
     "little-snitch"
 
     "micro-snitch"
+
+    "charles"
   ];
 }
