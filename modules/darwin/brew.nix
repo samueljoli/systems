@@ -36,5 +36,7 @@
     "zen-browser"
 
     "little-snitch"
+
+    "micro-snitch"
   ];
 }
