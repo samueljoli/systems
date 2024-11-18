@@ -32,6 +32,7 @@ in
     ${builtins.readFile ./grug.lua}
     ${builtins.readFile ./tint.lua}
     ${builtins.readFile ./statuscolumn.lua}
+    ${builtins.readFile ./rustaceanvim.lua}
   '';
 
   plugins = with pkgs.vimPlugins; [
