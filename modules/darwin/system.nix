@@ -30,8 +30,6 @@
   # Add ability to used TouchID for sudo authentication
   security.pam.enableSudoTouchIdAuth = true;
 
-  environment.loginShell = "${pkgs.zsh}/bin/zsh";
-
   environment.shells = [ pkgs.zsh ];
 
   environment.systemPackages = with pkgs; [
