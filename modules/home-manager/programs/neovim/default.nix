@@ -14,6 +14,7 @@ in
   extraLuaConfig = ''
     ${builtins.readFile ./options.lua}
     ${builtins.readFile ./keymaps.lua}
+    ${builtins.readFile ./lsp.lua}
     ${builtins.readFile ./cyberpunk.lua}
     ${builtins.readFile ./tokyo_night.lua}
     ${builtins.readFile ./treesitter.lua}
@@ -26,7 +27,6 @@ in
     ${builtins.readFile ./autopairs.lua}
     ${builtins.readFile ./heirline.lua}
     ${builtins.readFile ./lazydev.lua}
-    ${builtins.readFile ./lsp.lua}
     ${builtins.readFile ./conform.lua}
     ${builtins.readFile ./cmp.lua}
     ${builtins.readFile ./grug.lua}
