@@ -39,5 +39,7 @@
     "micro-snitch"
 
     "charles"
+
+    "shottr"
   ];
 }
