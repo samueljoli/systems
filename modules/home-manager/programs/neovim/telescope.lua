@@ -1,6 +1,12 @@
 local telescope = require("telescope")
 
 telescope.setup({
+	file_ignore_patterns = {
+		".git/.*",
+		".direnv/.*",
+		"node_modules",
+		"^target/",
+	},
 	extensions = {
 		fzf = {
 			fuzzy = true, -- false will only do exact matching
