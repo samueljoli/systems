@@ -6,10 +6,10 @@ end
 
 grug.setup()
 
-vim.keymap.set("n", "<leader>gr", function()
+vim.keymap.set("n", "<leader>gs", function()
 	grug.open({ prefills = { search = vim.fn.expand("<cword>") } })
 end, { noremap = true, desc = "Search w/ current word under the cursor" })
 
-vim.keymap.set("n", "<leader>gl", function()
+vim.keymap.set("n", "<leader>gr", function()
 	grug.open({ prefills = { paths = vim.fn.expand("%") } })
 end, { noremap = true, desc = "Search/Replace within current file" })
