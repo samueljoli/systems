@@ -36,64 +36,48 @@ in
   '';
 
   plugins = with pkgs.vimPlugins; [
-    tokyonight-nvim
-
-    vim-nix
-
-    pkgs.vimPlugins.foreign-cyberpunk-nvim
-
-    nvim-treesitter.withAllGrammars
-    nvim-treesitter-textobjects
-
+    cmp-nvim-lsp
+    cmp-nvim-lsp
+    cmp-path
+    cmp_luasnip
+    comment-nvim
+    conform-nvim
+    fidget-nvim
+    foreign-cyberpunk-nvim
+    foreign-dir-telescope
+    foreign-grug-nvim
+    foreign-heirline-components
+    foreign-lazydev-nvim
+    foreign-luvit-meta
+    foreign-statuscolumn-nvim
+    foreign-tint-nvim
+    foreign-vim-kitty
+    foreign-yazi-nvim
+    friendly-snippets
+    gitsigns-nvim
+    heirline-nvim
     hop-nvim
-
+    luasnip
+    mason-lspconfig-nvim
+    mason-nvim
+    mason-tool-installer-nvim
+    nvim-autopairs
+    nvim-cmp
+    nvim-colorizer-lua
+    nvim-lspconfig
+    nvim-treesitter-textobjects
+    nvim-treesitter.withAllGrammars
     nvim-web-devicons
     plenary-nvim
-    telescope-fzf-native-nvim
-    telescope-ui-select-nvim
-    telescope-nvim
-
-    pkgs.vimPlugins.foreign-dir-telescope
-
-    pkgs.vimPlugins.foreign-yazi-nvim
-
-    pkgs.vimPlugins.foreign-grug-nvim
-
-    pkgs.vimPlugins.foreign-tint-nvim
-
-    foreign-statuscolumn-nvim
-
-    foreign-vim-kitty
-
-    comment-nvim
-    gitsigns-nvim
-    nvim-colorizer-lua
-    nvim-autopairs
-
-    pkgs.vimPlugins.foreign-heirline-components
-    heirline-nvim
-
-    mason-nvim
-    mason-lspconfig-nvim
-    mason-tool-installer-nvim
-    cmp-nvim-lsp
-    fidget-nvim
-    pkgs.vimPlugins.foreign-lazydev-nvim
-    pkgs.vimPlugins.foreign-luvit-meta
-    nvim-lspconfig
-    typescript-tools-nvim
     rustaceanvim
-
-    conform-nvim
-
-    nvim-cmp
-    cmp-path
-
-    cmp_luasnip
-    cmp-nvim-lsp
-
-    luasnip
-    friendly-snippets
+    telescope-fzf-native-nvim
+    telescope-nvim
+    telescope-ui-select-nvim
+    tokyonight-nvim
+    typescript-tools-nvim
+    vim-fugitive
+    vim-nix
+    vim-rhubarb
   ];
 
   extraLuaPackages = ps: [ ps.jsregexp ];
