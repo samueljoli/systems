@@ -107,6 +107,7 @@
           rebuild
           nix-lsp-server
           nixfmt-rfc-style
+          pkgs.lua-language-server
         ];
       };
 
