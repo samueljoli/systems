@@ -21,25 +21,16 @@
   homebrew.enable = true;
 
   homebrew.casks = [
-
-    "tailscale"
-
-    "shortcat"
-
-    "docker"
-
     "1password"
-
-    "tableplus"
-
-    "zen-browser"
-
-    "little-snitch"
-
-    "micro-snitch"
-
     "charles"
-
+    "docker"
+    "little-snitch"
+    "lulu"
+    "micro-snitch"
+    "shortcat"
     "shottr"
+    "tableplus"
+    "tailscale"
+    "zen-browser"
   ];
 }
