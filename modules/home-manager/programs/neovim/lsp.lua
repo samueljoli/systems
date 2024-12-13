@@ -157,8 +157,9 @@ local servers = {
 	-- But for many setups, the LSP (`tsserver`) will work just fine
 	-- tsserver = {},
 
-  lua_ls = {}, -- NOTE: configured via .luarc.json in home-manager directory
+	lua_ls = {}, -- NOTE: configured via .luarc.json in home-manager directory
 	nil_ls = {},
+	pest_ls = {},
 }
 
 -- Ensure the servers and tools above are installed

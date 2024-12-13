@@ -662,6 +662,22 @@
         "type": "github"
       }
     },
+    "plugin-pest-vim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1714047958,
+        "narHash": "sha256-EQcMSsKWtQvr0eQ6Hn0TtDA5Nc7VV0g2bnbx7i2B7u4=",
+        "owner": "pest-parser",
+        "repo": "pest.vim",
+        "rev": "7cfcb43f824e74d13dfe631359fff2ec23836a77",
+        "type": "github"
+      },
+      "original": {
+        "owner": "pest-parser",
+        "repo": "pest.vim",
+        "type": "github"
+      }
+    },
     "plugin-statuscolumn-nvim": {
       "flake": false,
       "locked": {
@@ -746,6 +762,7 @@
         "plugin-heirline-components": "plugin-heirline-components",
         "plugin-lazydev-nvim": "plugin-lazydev-nvim",
         "plugin-luvit-meta": "plugin-luvit-meta",
+        "plugin-pest-vim": "plugin-pest-vim",
         "plugin-statuscolumn-nvim": "plugin-statuscolumn-nvim",
         "plugin-tint-nvim": "plugin-tint-nvim",
         "plugin-vim-kitty": "plugin-vim-kitty",

@@ -77,6 +77,10 @@
       url = "github:lalilul3lo/baouncer";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    plugin-pest-vim = {
+      url = "github:pest-parser/pest.vim";
+      flake = false;
+    };
   };
 
   outputs =

@@ -53,6 +53,7 @@ in
     foreign-tint-nvim
     foreign-vim-kitty
     foreign-yazi-nvim
+    foreign-pest-vim
     friendly-snippets
     gitsigns-nvim
     heirline-nvim

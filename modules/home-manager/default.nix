@@ -75,6 +75,10 @@
             name = "luvit-meta";
             src = inputs.plugin-luvit-meta;
           };
+          foreign-pest-vim = prev.vimUtils.buildVimPlugin {
+            name = "pest-vim";
+            src = inputs.plugin-pest-vim;
+          };
         };
       })
     ];
