@@ -33,9 +33,11 @@ in
     ${builtins.readFile ./tint.lua}
     ${builtins.readFile ./statuscolumn.lua}
     ${builtins.readFile ./rustaceanvim.lua}
+    ${builtins.readFile ./barbar.lua}
   '';
 
   plugins = with pkgs.vimPlugins; [
+    barbar-nvim
     cmp-nvim-lsp
     cmp-nvim-lsp
     cmp-path
