@@ -2,7 +2,7 @@ local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
 -- Pin/unpin buffer
-map("n", "<S-p>", "<Cmd>BufferPin<CR>", opts)
+map("n", "<leader>p", "<Cmd>BufferPin<CR>", opts)
 
 -- Goto pinned/unpinned buffer
 --                 :BufferGotoPinned
@@ -19,7 +19,7 @@ map("n", "<leader>c", "<Cmd>BufferClose<CR>", opts)
 --                 :BufferCloseBuffersRight
 
 -- Magic buffer-picking mode
-map("n", "<C-p>", "<Cmd>BufferPick<CR>", opts)
+map("n", "<leader>b", "<Cmd>BufferPick<CR>", opts)
 map("n", "<C-s-p>", "<Cmd>BufferPickDelete<CR>", opts)
 
 -- Sort automatically by...
