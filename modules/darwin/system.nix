@@ -24,6 +24,10 @@
 
   system.defaults.dock.wvous-tl-corner = 2; # Hot corner action for top left corner → Mission Control
 
+  system.defaults.".GlobalPreferences"."com.apple.mouse.scaling" = 2.0; # Sets the mouse tracking speed
+
+  system.defaults.NSGlobalDomain."com.apple.trackpad.scaling" = 2.0; # Configures the trackpad tracking speed
+
   # system.defaults.dock
   time.timeZone = "America/New_York";
 
