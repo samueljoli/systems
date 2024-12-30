@@ -24,6 +24,7 @@
     "1password"
     "charles"
     "docker"
+    "ghostty"
     "little-snitch"
     "lulu"
     "micro-snitch"
