@@ -323,11 +323,11 @@
     "homebrew-cask": {
       "flake": false,
       "locked": {
-        "lastModified": 1735584203,
-        "narHash": "sha256-ZB/hT562fYEWGeeSDTezLakRVGx6zfrswIvCfEu2zI4=",
+        "lastModified": 1735580692,
+        "narHash": "sha256-zZuQ+8AmUjicHanhot0rzXITkL3pAvbWUgGIfmGkDo8=",
         "owner": "homebrew",
         "repo": "homebrew-cask",
-        "rev": "1c880980a2be8e1aaacce6bba673c7944d2489f6",
+        "rev": "3001e1226d5f90d7cb562992b6d292836f7ecbcd",
         "type": "github"
       },
       "original": {
@@ -339,11 +339,11 @@
     "homebrew-core": {
       "flake": false,
       "locked": {
-        "lastModified": 1735583675,
-        "narHash": "sha256-e4RGNIfLLHsjM01eXwvqrSLEd7ZgfTa9X+8/TyVI/So=",
+        "lastModified": 1735580739,
+        "narHash": "sha256-GDnZxmfk8vUUyP2WibcBme+7MKDPj1aYA90KwuMhRQU=",
         "owner": "homebrew",
         "repo": "homebrew-core",
-        "rev": "520e267331a64a1217e299a62828575fe2153fc8",
+        "rev": "885d7da05dd45a19982ecf58ad314313bbef58cb",
         "type": "github"
       },
       "original": {
@@ -616,16 +616,17 @@
     "plugin-heirline-components": {
       "flake": false,
       "locked": {
-        "lastModified": 1735493405,
-        "narHash": "sha256-M2muEW4RFQxdaJjZaXMXosy0M7Zj4MlbITRpRWpinwo=",
+        "lastModified": 1723525838,
+        "narHash": "sha256-RrlkCfihaM+x1wAuiqmSaqp97wLWXrYc1sTTOvszejg=",
         "owner": "Zeioth",
         "repo": "heirline-components.nvim",
-        "rev": "935f29dabd86f2669e0b3c8dd283b2d3b1cfaee7",
+        "rev": "f849bbfe05f0d523449eb8d0713dffd4c3d7c295",
         "type": "github"
       },
       "original": {
         "owner": "Zeioth",
         "repo": "heirline-components.nvim",
+        "rev": "f849bbfe05f0d523449eb8d0713dffd4c3d7c295",
         "type": "github"
       }
     },
