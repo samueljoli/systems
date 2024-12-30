@@ -43,7 +43,7 @@
   fonts.packages = with pkgs; [
     roboto-mono
     font-awesome
-    nerdfonts
+    nerd-fonts.droid-sans-mono
   ];
 
   # Create /etc/zshrc that loads the nix-darwin environment.
