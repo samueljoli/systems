@@ -21,6 +21,7 @@
   homebrew.enable = true;
 
   homebrew.casks = [
+    "ghostty"
     "1password"
     "charles"
     "docker"

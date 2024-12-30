@@ -92,5 +92,6 @@
   home.file = {
     ".config/kitty/get_layout.py".source = ./programs/kitty/get_layout.py;
     ".config/kitty/pass_keys.py".source = ./programs/kitty/pass_keys.py;
+    ".config/ghostty/config".source = ./ghostty/config;
   };
 }
