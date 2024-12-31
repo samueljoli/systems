@@ -53,7 +53,6 @@ in
     foreign-luvit-meta
     foreign-statuscolumn-nvim
     foreign-tint-nvim
-    foreign-vim-kitty
     foreign-yazi-nvim
     foreign-pest-vim
     friendly-snippets

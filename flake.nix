@@ -26,10 +26,6 @@
       url = "github:oxalica/nil/c8e8ce72442a164d89d3fdeaae0bcc405f8c015a";
       flake = true;
     };
-    plugin-vim-kitty = {
-      url = "github:knubie/vim-kitty-navigator/20abf8613aa228a5def1ae02cd9da0f2d210352a";
-      flake = false;
-    };
     neovim-nightly-overlay = {
       url = "github:nix-community/neovim-nightly-overlay/f35afbe60a4ff71fd65fec3839fc38943f961951";
     };
