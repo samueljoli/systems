@@ -27,7 +27,7 @@
       flake = true;
     };
     neovim-nightly-overlay = {
-      url = "github:nix-community/neovim-nightly-overlay/f35afbe60a4ff71fd65fec3839fc38943f961951";
+      url = "github:nix-community/neovim-nightly-overlay";
     };
     plugin-statuscolumn-nvim = {
       url = "github:JuanBaut/statuscolumn.nvim";
