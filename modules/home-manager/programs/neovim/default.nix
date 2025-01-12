@@ -51,10 +51,10 @@ in
     foreign-heirline-components
     foreign-lazydev-nvim
     foreign-luvit-meta
+    foreign-pest-vim
     foreign-statuscolumn-nvim
     foreign-tint-nvim
     foreign-yazi-nvim
-    foreign-pest-vim
     friendly-snippets
     gitsigns-nvim
     heirline-nvim
@@ -67,6 +67,7 @@ in
     nvim-cmp
     nvim-colorizer-lua
     nvim-lspconfig
+    nvim-treesitter-context
     nvim-treesitter-textobjects
     nvim-treesitter.withAllGrammars
     nvim-web-devicons
