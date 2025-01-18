@@ -34,6 +34,7 @@ in
     ${builtins.readFile ./statuscolumn.lua}
     ${builtins.readFile ./rustaceanvim.lua}
     ${builtins.readFile ./barbar.lua}
+    ${builtins.readFile ./crates.lua}
   '';
 
   plugins = with pkgs.vimPlugins; [
@@ -44,6 +45,7 @@ in
     cmp_luasnip
     comment-nvim
     conform-nvim
+    crates-nvim
     fidget-nvim
     foreign-cyberpunk-nvim
     foreign-dir-telescope
