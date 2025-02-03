@@ -1,3 +1,3 @@
 require("Comment").setup()
 
-vim.keymap.set("n", "m", "o<C-w>", { noremap = true })
+vim.keymap.set("n", "M", "o<C-w>", { noremap = true })
