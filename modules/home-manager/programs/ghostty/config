@@ -8,10 +8,15 @@ font-thicken = true
 theme = GruvboxDarkHard
 
 # Behavior
-keybind = global:cmd+enter=new_split:down
-keybind = global:ctrl+j=goto_split:bottom
-keybind = global:ctrl+k=goto_split:top
-keybind = global:ctrl+h=goto_split:left
-keybind = global:ctrl+l=goto_split:right
 
+# Splits
+keybind = global:cmd+j=new_split:down
+keybind = global:cmd+k=new_split:up
+keybind = global:cmd+h=new_split:left
+keybind = global:cmd+l=new_split:right
 
+# Navigate splits
+keybind = ctrl+option+j=goto_split:bottom
+keybind = ctrl+option+k=goto_split:top
+keybind = ctrl+option+h=goto_split:left
+keybind = ctrl+option+l=goto_split:right
