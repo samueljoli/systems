@@ -9,6 +9,9 @@ vim.g.rustaceanvim = {
 				files = {
 					excludeDirs = { ".direnv" },
 				},
+				diagnostic = {
+					refreshSupport = false,
+				},
 			},
 		},
 	},
