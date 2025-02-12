@@ -16,6 +16,7 @@ rec {
         ../../modules/darwin/host-users.nix
         ../../modules/darwin/system.nix
         ../../modules/darwin/brew.nix
+        ../../modules/darwin/services/default.nix
       ];
       specialArgs = {
         inherit inputs;
