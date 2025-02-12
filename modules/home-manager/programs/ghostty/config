@@ -10,10 +10,10 @@ theme = GruvboxDarkHard
 # Behavior
 
 # Splits
-keybind = global:cmd+j=new_split:down
-keybind = global:cmd+k=new_split:up
-keybind = global:cmd+h=new_split:left
-keybind = global:cmd+l=new_split:right
+keybind = cmd+j=new_split:down
+keybind = cmd+k=new_split:up
+keybind = cmd+h=new_split:left
+keybind = cmd+l=new_split:right
 
 # Navigate splits
 keybind = ctrl+option+j=goto_split:bottom
