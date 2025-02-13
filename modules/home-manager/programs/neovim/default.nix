@@ -1,9 +1,4 @@
 { inputs, pkgs }:
-
-let
-  toLua = str: "lua << EOF\n${str}\nEOF\n";
-  toLuaFile = file: "lua << EOF\n${builtins.readFile file}\nEOF\n";
-in
 {
   enable = true;
   package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
@@ -35,6 +30,7 @@ in
     ${builtins.readFile ./rustaceanvim.lua}
     ${builtins.readFile ./barbar.lua}
     ${builtins.readFile ./crates.lua}
+    ${builtins.readFile ./neotest.lua}
   '';
 
   plugins = with pkgs.vimPlugins; [
@@ -65,6 +61,9 @@ in
     mason-lspconfig-nvim
     mason-nvim
     mason-tool-installer-nvim
+    neotest
+    nvim-nio
+    FixCursorHold-nvim
     nvim-autopairs
     nvim-cmp
     nvim-colorizer-lua
