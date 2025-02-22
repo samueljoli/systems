@@ -33,6 +33,7 @@ let
     ripgrep
     ast-grep
     yazi
+    copier
   ];
 in
 infraTools ++ gitTools ++ nixTools ++ toys
