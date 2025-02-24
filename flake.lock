@@ -571,6 +571,23 @@
         "type": "github"
       }
     },
+    "plugin-crates-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1739985397,
+        "narHash": "sha256-//k3K/L3LpS5Tws9S0SHujPW/CoZStRNTAOEyU4xo08=",
+        "owner": "saecki",
+        "repo": "crates.nvim",
+        "rev": "85356807f3a0e9a3f7015586f3a010170d338686",
+        "type": "github"
+      },
+      "original": {
+        "owner": "saecki",
+        "ref": "v0.6.0",
+        "repo": "crates.nvim",
+        "type": "github"
+      }
+    },
     "plugin-cyberpunk-nvim": {
       "flake": false,
       "locked": {
@@ -760,6 +777,7 @@
         "nix-darwin": "nix-darwin",
         "nix-homebrew": "nix-homebrew",
         "nixpkgs": "nixpkgs_7",
+        "plugin-crates-nvim": "plugin-crates-nvim",
         "plugin-cyberpunk-nvim": "plugin-cyberpunk-nvim",
         "plugin-dir-telescope": "plugin-dir-telescope",
         "plugin-grug-nvim": "plugin-grug-nvim",

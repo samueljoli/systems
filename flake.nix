@@ -29,6 +29,10 @@
     neovim-nightly-overlay = {
       url = "github:nix-community/neovim-nightly-overlay";
     };
+    plugin-crates-nvim = {
+      url = "github:saecki/crates.nvim/v0.6.0";
+      flake = false;
+    };
     plugin-statuscolumn-nvim = {
       url = "github:JuanBaut/statuscolumn.nvim";
       flake = false;

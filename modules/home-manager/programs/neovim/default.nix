@@ -41,8 +41,8 @@
     cmp_luasnip
     comment-nvim
     conform-nvim
-    crates-nvim
     fidget-nvim
+    foreign-crates-nvim
     foreign-cyberpunk-nvim
     foreign-dir-telescope
     foreign-grug-nvim

@@ -67,6 +67,10 @@
             name = "lazydev";
             src = inputs.plugin-lazydev-nvim;
           };
+          foreign-crates-nvim = prev.vimUtils.buildVimPlugin {
+            name = "crates";
+            src = inputs.plugin-crates-nvim;
+          };
           foreign-luvit-meta = prev.vimUtils.buildVimPlugin {
             name = "luvit-meta";
             src = inputs.plugin-luvit-meta;
