@@ -35,21 +35,9 @@
             name = "statuscolumn";
             src = inputs.plugin-statuscolumn-nvim;
           };
-          foreign-dir-telescope = prev.vimUtils.buildVimPlugin {
-            name = "dir-telescope";
-            src = inputs.plugin-dir-telescope;
-          };
-          foreign-grug-nvim = prev.vimUtils.buildVimPlugin {
-            name = "grug";
-            src = inputs.plugin-grug-nvim;
-          };
           foreign-tint-nvim = prev.vimUtils.buildVimPlugin {
             name = "tint-nvim";
             src = inputs.plugin-tint-nvim;
-          };
-          foreign-yazi-nvim = prev.vimUtils.buildVimPlugin {
-            name = "yazi";
-            src = inputs.plugin-yazi-nvim;
           };
           foreign-cyberpunk-nvim = prev.vimUtils.buildVimPlugin {
             name = "cyberpunk";
@@ -59,25 +47,13 @@
             name = "gruvbox";
             src = inputs.plugin-gruvbox-nvim;
           };
-          foreign-heirline-components = prev.vimUtils.buildVimPlugin {
-            name = "heirline-components";
-            src = inputs.plugin-heirline-components;
-          };
           foreign-lazydev-nvim = prev.vimUtils.buildVimPlugin {
             name = "lazydev";
             src = inputs.plugin-lazydev-nvim;
           };
-          foreign-crates-nvim = prev.vimUtils.buildVimPlugin {
-            name = "crates";
-            src = inputs.plugin-crates-nvim;
-          };
           foreign-luvit-meta = prev.vimUtils.buildVimPlugin {
             name = "luvit-meta";
             src = inputs.plugin-luvit-meta;
-          };
-          foreign-pest-vim = prev.vimUtils.buildVimPlugin {
-            name = "pest-vim";
-            src = inputs.plugin-pest-vim;
           };
         };
       })

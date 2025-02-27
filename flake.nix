@@ -29,10 +29,6 @@
     neovim-nightly-overlay = {
       url = "github:nix-community/neovim-nightly-overlay";
     };
-    plugin-crates-nvim = {
-      url = "github:saecki/crates.nvim/v0.6.0";
-      flake = false;
-    };
     plugin-statuscolumn-nvim = {
       url = "github:JuanBaut/statuscolumn.nvim";
       flake = false;
@@ -45,20 +41,8 @@
       url = "github:samueljoli/cyberpunk.nvim";
       flake = false;
     };
-    plugin-grug-nvim = {
-      url = "github:MagicDuck/grug-far.nvim";
-      flake = false;
-    };
     plugin-gruvbox-nvim = {
       url = "github:ellisonleao/gruvbox.nvim";
-      flake = false;
-    };
-    plugin-yazi-nvim = {
-      url = "github:mikavilpas/yazi.nvim";
-      flake = false;
-    };
-    plugin-heirline-components = {
-      url = "github:Zeioth/heirline-components.nvim/f849bbfe05f0d523449eb8d0713dffd4c3d7c295";
       flake = false;
     };
     plugin-lazydev-nvim = {
@@ -69,17 +53,9 @@
       url = "github:Bilal2453/luvit-meta";
       flake = false;
     };
-    plugin-dir-telescope = {
-      url = "github:princejoogie/dir-telescope.nvim";
-      flake = false;
-    };
     baouncer = {
       url = "github:lalilul3lo/baouncer";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-    plugin-pest-vim = {
-      url = "github:pest-parser/pest.vim";
-      flake = false;
     };
   };
 

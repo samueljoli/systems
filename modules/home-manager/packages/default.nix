@@ -24,6 +24,7 @@ let
     flake-checker
     nixfmt-rfc-style
     nixpkgs-fmt
+    nix-prefetch-github
   ];
 
   toys = with pkgs; [

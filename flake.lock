@@ -571,23 +571,6 @@
         "type": "github"
       }
     },
-    "plugin-crates-nvim": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1739985397,
-        "narHash": "sha256-//k3K/L3LpS5Tws9S0SHujPW/CoZStRNTAOEyU4xo08=",
-        "owner": "saecki",
-        "repo": "crates.nvim",
-        "rev": "85356807f3a0e9a3f7015586f3a010170d338686",
-        "type": "github"
-      },
-      "original": {
-        "owner": "saecki",
-        "ref": "v0.6.0",
-        "repo": "crates.nvim",
-        "type": "github"
-      }
-    },
     "plugin-cyberpunk-nvim": {
       "flake": false,
       "locked": {
@@ -604,38 +587,6 @@
         "type": "github"
       }
     },
-    "plugin-dir-telescope": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1724719740,
-        "narHash": "sha256-B/cZUkjAVi52jopBwZJYmiaVf8PqnawusnSGOx7dDqs=",
-        "owner": "princejoogie",
-        "repo": "dir-telescope.nvim",
-        "rev": "805405b9f98dc3470f8676773dc0e6151a9158ed",
-        "type": "github"
-      },
-      "original": {
-        "owner": "princejoogie",
-        "repo": "dir-telescope.nvim",
-        "type": "github"
-      }
-    },
-    "plugin-grug-nvim": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1731539598,
-        "narHash": "sha256-aDArDBsdwAUR8CVwBugASNeYut624VnBC87i+ilcavc=",
-        "owner": "MagicDuck",
-        "repo": "grug-far.nvim",
-        "rev": "9a2f78219390b47d67795ab09390d7f092e23976",
-        "type": "github"
-      },
-      "original": {
-        "owner": "MagicDuck",
-        "repo": "grug-far.nvim",
-        "type": "github"
-      }
-    },
     "plugin-gruvbox-nvim": {
       "flake": false,
       "locked": {
@@ -649,23 +600,6 @@
       "original": {
         "owner": "ellisonleao",
         "repo": "gruvbox.nvim",
-        "type": "github"
-      }
-    },
-    "plugin-heirline-components": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1723525838,
-        "narHash": "sha256-RrlkCfihaM+x1wAuiqmSaqp97wLWXrYc1sTTOvszejg=",
-        "owner": "Zeioth",
-        "repo": "heirline-components.nvim",
-        "rev": "f849bbfe05f0d523449eb8d0713dffd4c3d7c295",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Zeioth",
-        "repo": "heirline-components.nvim",
-        "rev": "f849bbfe05f0d523449eb8d0713dffd4c3d7c295",
         "type": "github"
       }
     },
@@ -701,22 +635,6 @@
         "type": "github"
       }
     },
-    "plugin-pest-vim": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1714047958,
-        "narHash": "sha256-EQcMSsKWtQvr0eQ6Hn0TtDA5Nc7VV0g2bnbx7i2B7u4=",
-        "owner": "pest-parser",
-        "repo": "pest.vim",
-        "rev": "7cfcb43f824e74d13dfe631359fff2ec23836a77",
-        "type": "github"
-      },
-      "original": {
-        "owner": "pest-parser",
-        "repo": "pest.vim",
-        "type": "github"
-      }
-    },
     "plugin-statuscolumn-nvim": {
       "flake": false,
       "locked": {
@@ -749,22 +667,6 @@
         "type": "github"
       }
     },
-    "plugin-yazi-nvim": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1731841723,
-        "narHash": "sha256-HMk3Csrgmx2ketlE3pbnit2pRnOnMtMX2xUID8vtEMw=",
-        "owner": "mikavilpas",
-        "repo": "yazi.nvim",
-        "rev": "faa03e9acb894533b91c811d0dafd816b995088f",
-        "type": "github"
-      },
-      "original": {
-        "owner": "mikavilpas",
-        "repo": "yazi.nvim",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "baouncer": "baouncer",
@@ -777,18 +679,12 @@
         "nix-darwin": "nix-darwin",
         "nix-homebrew": "nix-homebrew",
         "nixpkgs": "nixpkgs_7",
-        "plugin-crates-nvim": "plugin-crates-nvim",
         "plugin-cyberpunk-nvim": "plugin-cyberpunk-nvim",
-        "plugin-dir-telescope": "plugin-dir-telescope",
-        "plugin-grug-nvim": "plugin-grug-nvim",
         "plugin-gruvbox-nvim": "plugin-gruvbox-nvim",
-        "plugin-heirline-components": "plugin-heirline-components",
         "plugin-lazydev-nvim": "plugin-lazydev-nvim",
         "plugin-luvit-meta": "plugin-luvit-meta",
-        "plugin-pest-vim": "plugin-pest-vim",
         "plugin-statuscolumn-nvim": "plugin-statuscolumn-nvim",
-        "plugin-tint-nvim": "plugin-tint-nvim",
-        "plugin-yazi-nvim": "plugin-yazi-nvim"
+        "plugin-tint-nvim": "plugin-tint-nvim"
       }
     },
     "rust-overlay": {
