@@ -9,7 +9,6 @@ let
     ]
     ++ (with gitAndTools; [
       diff-so-fancy
-      git-codeowners
     ])
   );
 
