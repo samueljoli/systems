@@ -27,6 +27,15 @@ let
       sha256 = "sha256-d2mxbTFs8ixvSu3IfK7MfK82Sx0iQf+JW1eX1Yfknjo=";
     };
   };
+  heirline-nvim = pkgs.vimUtils.buildVimPlugin {
+    name = "heirline-nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "rebelot";
+      repo = "heirline.nvim";
+      rev = "af3f441ea10f96105e1af14cd37bf213533812d2";
+      sha256 = "sha256-VY7I8K0Phekr3gu+QnNbxKRI+8TUVIx5gWYe1Q7gsuI=";
+    };
+  };
   heirline-components-nvim = pkgs.vimUtils.buildVimPlugin {
     name = "heirline-components-nvim";
     src = pkgs.fetchFromGitHub {
