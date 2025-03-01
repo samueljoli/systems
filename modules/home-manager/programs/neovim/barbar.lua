@@ -1,22 +1,21 @@
+local status_ok, barbar = pcall(require, "barbar")
+
+if not status_ok then
+	return
+end
+
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
+
+barbar.setup({
+	animation = false,
+})
 
 -- Pin/unpin buffer
 map("n", "<leader>p", "<Cmd>BufferPin<CR>", opts)
 
--- Goto pinned/unpinned buffer
---                 :BufferGotoPinned
---                 :BufferGotoUnpinned
-
 -- Close buffer
 map("n", "<leader>c", "<Cmd>BufferClose<CR>", opts)
-
--- Close commands
---                 :BufferCloseAllButCurrent
---                 :BufferCloseAllButPinned
---                 :BufferCloseAllButCurrentOrPinned
---                 :BufferCloseBuffersLeft
---                 :BufferCloseBuffersRight
 
 -- Magic buffer-picking mode
 map("n", "<leader>b", "<Cmd>BufferPick<CR>", opts)
@@ -28,7 +27,3 @@ map("n", "<leader>bn", "<Cmd>BufferOrderByName<CR>", opts)
 map("n", "<leader>bd", "<Cmd>BufferOrderByDirectory<CR>", opts)
 map("n", "<leader>bl", "<Cmd>BufferOrderByLanguage<CR>", opts)
 map("n", "<leader>bw", "<Cmd>BufferOrderByWindowNumber<CR>", opts)
-
--- Other:
--- :BarbarEnable - enables barbar (enabled by default)
--- :BarbarDisable - very bad command, should never be used
