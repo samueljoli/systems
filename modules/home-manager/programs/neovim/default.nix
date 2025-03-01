@@ -54,6 +54,15 @@ let
       sha256 = "sha256-EQcMSsKWtQvr0eQ6Hn0TtDA5Nc7VV0g2bnbx7i2B7u4=";
     };
   };
+  todo-comments-nvim = pkgs.vimUtils.buildVimPlugin {
+    name = "todo-comments-nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "folke";
+      repo = "todo-comments.nvim";
+      rev = "304a8d204ee787d2544d8bc23cd38d2f929e7cc5";
+      sha256 = "sha256-at9OSBtQqyiDdxKdNn2x6z4k8xrDD90sACKEK7uKNUM=";
+    };
+  };
 in
 {
   enable = true;
@@ -87,6 +96,7 @@ in
     ${builtins.readFile ./barbar.lua}
     ${builtins.readFile ./crates.lua}
     ${builtins.readFile ./neotest.lua}
+    ${builtins.readFile ./todo-comments.lua}
   '';
 
   plugins = with pkgs.vimPlugins; [
@@ -138,6 +148,7 @@ in
     vim-fugitive
     vim-nix
     vim-rhubarb
+    todo-comments-nvim
   ];
 
   extraLuaPackages = ps: [ ps.jsregexp ];
