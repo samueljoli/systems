@@ -29,30 +29,6 @@
     neovim-nightly-overlay = {
       url = "github:nix-community/neovim-nightly-overlay";
     };
-    plugin-statuscolumn-nvim = {
-      url = "github:JuanBaut/statuscolumn.nvim";
-      flake = false;
-    };
-    plugin-tint-nvim = {
-      url = "github:levouh/tint.nvim";
-      flake = false;
-    };
-    plugin-cyberpunk-nvim = {
-      url = "github:samueljoli/cyberpunk.nvim";
-      flake = false;
-    };
-    plugin-gruvbox-nvim = {
-      url = "github:ellisonleao/gruvbox.nvim";
-      flake = false;
-    };
-    plugin-lazydev-nvim = {
-      url = "github:folke/lazydev.nvim";
-      flake = false;
-    };
-    plugin-luvit-meta = {
-      url = "github:Bilal2453/luvit-meta";
-      flake = false;
-    };
     baouncer = {
       url = "github:lalilul3lo/baouncer";
       inputs.nixpkgs.follows = "nixpkgs";

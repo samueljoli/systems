@@ -1,10 +1,8 @@
 {
-  config,
   pkgs,
   inputs,
   username,
   system,
-  lib,
   ...
 }:
 {
@@ -29,34 +27,6 @@
   nixpkgs = {
     overlays = [
       inputs.neovim-nightly-overlay.overlays.default
-      (final: prev: {
-        vimPlugins = prev.vimPlugins // {
-          foreign-statuscolumn-nvim = prev.vimUtils.buildVimPlugin {
-            name = "statuscolumn";
-            src = inputs.plugin-statuscolumn-nvim;
-          };
-          foreign-tint-nvim = prev.vimUtils.buildVimPlugin {
-            name = "tint-nvim";
-            src = inputs.plugin-tint-nvim;
-          };
-          foreign-cyberpunk-nvim = prev.vimUtils.buildVimPlugin {
-            name = "cyberpunk";
-            src = inputs.plugin-cyberpunk-nvim;
-          };
-          foreign-gruvbox-nvim = prev.vimUtils.buildVimPlugin {
-            name = "gruvbox";
-            src = inputs.plugin-gruvbox-nvim;
-          };
-          foreign-lazydev-nvim = prev.vimUtils.buildVimPlugin {
-            name = "lazydev";
-            src = inputs.plugin-lazydev-nvim;
-          };
-          foreign-luvit-meta = prev.vimUtils.buildVimPlugin {
-            name = "luvit-meta";
-            src = inputs.plugin-luvit-meta;
-          };
-        };
-      })
     ];
   };
 
