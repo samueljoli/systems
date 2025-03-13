@@ -1,6 +1,10 @@
 { pkgs }:
 
 let
+  buildTools = with pkgs; [
+    lld
+  ];
+
   gitTools = (
     with pkgs;
     [
@@ -36,4 +40,4 @@ let
     copier
   ];
 in
-infraTools ++ gitTools ++ nixTools ++ toys
+infraTools ++ gitTools ++ nixTools ++ toys ++ buildTools
