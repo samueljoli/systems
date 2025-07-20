@@ -10,15 +10,15 @@ neotest.setup({
 	},
 })
 
-vim.keymap.set("n", "<leader>Tf", function()
+vim.keymap.set("n", "<leader>'", function()
 	require("neotest").run.run(vim.fn.expand("%"))
 end, { desc = "Run [T]est [F]ile" })
 
-vim.keymap.set("n", "<leader>Tl", function()
+vim.keymap.set("n", "<leader>tl", function()
 	require("neotest").run.run_last()
 end, { desc = "Run Last Test" })
 
-vim.keymap.set("n", "<leader>Tn", function()
+vim.keymap.set("n", "<leader>;", function()
 	require("neotest").run.run()
 end, { desc = "Run [T]est [N]earest" })
 
