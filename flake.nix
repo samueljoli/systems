@@ -65,7 +65,7 @@
           nixfmt-rfc-style
           pkgs.lua-language-server
           # For scripting with node
-          pkgs.nodejs_23
+          pkgs.nodejs_24
           pkgs.typescript
           pkgs.typescript-language-server
         ];
