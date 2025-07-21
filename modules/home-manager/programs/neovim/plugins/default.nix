@@ -8,6 +8,23 @@ let
       rev = "1803c8b5516610ba7cdb759a4472a78414ee6cd4";
       sha256 = "sha256-xuRth8gfX6ZTV3AUBaTM9VJr7ulsNFxtKEsFDZduDC8=";
     };
+    nvimSkipModules = [
+      "crates.null-ls"
+    ];
+  };
+  blink-cmp = pkgs.vimUtils.buildVimPlugin {
+    name = "blink.cmp";
+    src = pkgs.fetchFromGitHub {
+      owner = "Saghen";
+      repo = "blink.cmp";
+      rev = "af22c527a451d162e5229a1eff9283ee840b4bca";
+      sha256 = "sha256-WnXCVNU5if/2pODUNpyMtEssRXgpmGqEhwUAbL9AN1Q=";
+    };
+
+    nvimSkipModules = [
+      "repro"
+      "blink.cmp.fuzzy.rust.init"
+    ];
   };
   yazi-nvim = pkgs.vimUtils.buildVimPlugin {
     name = "yazi-nvim";
@@ -17,6 +34,27 @@ let
       rev = "0c70a0833ed79863758d01d6e9af2d7765b1c68c";
       sha256 = "sha256-d2mxbTFs8ixvSu3IfK7MfK82Sx0iQf+JW1eX1Yfknjo=";
     };
+    nvimSkipModules = [
+      "repro"
+      "yazi.lsp.rename"
+      "yazi.lsp.embedded-lsp-file-operations.lsp-file-operations"
+      "yazi.lsp.embedded-lsp-file-operations.lsp-file-operations.did-delete"
+      "yazi.lsp.embedded-lsp-file-operations.lsp-file-operations.will-delete"
+      "yazi.lsp.embedded-lsp-file-operations.lsp-file-operations.did-rename"
+      "yazi.lsp.embedded-lsp-file-operations.lsp-file-operations.will-rename"
+      "yazi.lsp.embedded-lsp-file-operations.lsp-file-operations.log"
+      "yazi.lsp.embedded-lsp-file-operations.lsp-file-operations.utils"
+      "yazi.lsp.embedded-lsp-file-operations.lsp-file-operations.did-create"
+      "yazi.lsp.embedded-lsp-file-operations.lsp-file-operations.will-create"
+      "yazi.lsp.delete"
+      "yazi.renameable_buffer"
+      "yazi.event_handling.yazi_event_handling"
+      "yazi.utils"
+      "yazi.buffer_highlighting.yazi_session_highlighter"
+      "yazi.keybinding_helpers"
+      "yazi.process.ya_process"
+      "yazi.process.yazi_process"
+    ];
   };
   heirline-nvim = pkgs.vimUtils.buildVimPlugin {
     name = "heirline-nvim";
@@ -35,6 +73,16 @@ let
       rev = "935f29dabd86f2669e0b3c8dd283b2d3b1cfaee7";
       sha256 = "sha256-M2muEW4RFQxdaJjZaXMXosy0M7Zj4MlbITRpRWpinwo=";
     };
+    nvimSkipModules = [
+      "heirline-components.core.heirline"
+      "heirline-components.core.init"
+      "heirline-components.core.env"
+      "heirline-components.core.hl"
+      "heirline-components.core.component"
+      "heirline-components.core.utils"
+      "heirline-components.core.provider"
+      "heirline-components.core.condition"
+    ];
   };
   grug-far-nvim = pkgs.vimUtils.buildVimPlugin {
     name = "grum-far-nvim";
@@ -62,6 +110,11 @@ let
       rev = "304a8d204ee787d2544d8bc23cd38d2f929e7cc5";
       sha256 = "sha256-at9OSBtQqyiDdxKdNn2x6z4k8xrDD90sACKEK7uKNUM=";
     };
+    nvimSkipModules = [
+      "todo-comments.fzf"
+      "trouble.providers.todo"
+      "trouble.sources.todo"
+    ];
   };
   statuscolumn-nvim = pkgs.vimUtils.buildVimPlugin {
     name = "statuscolumn-nvim";
@@ -125,42 +178,9 @@ let
       rev = "807bede7ef1d8e2ac5f108e9ac8123b1e2d321e3";
       sha256 = "sha256-RXeuN19snH7queItuxfeh2EeGKW18xsSfA2xVAenrhM=";
     };
-  };
-  nvim-cmp = pkgs.vimUtils.buildVimPlugin {
-    name = "nvim-cmp";
-    src = pkgs.fetchFromGitHub {
-      owner = "hrsh7th";
-      repo = "nvim-cmp";
-      rev = "c27370703e798666486e3064b64d59eaf4bdc6d5";
-      sha256 = "sha256-apIVfiETv9ZN1itKiuCXpDA+Pr7vn4Tjdkr2gaBN6Ew=";
-    };
-  };
-  cmp-nvim-lsp = pkgs.vimUtils.buildVimPlugin {
-    name = "cmp-nvim-lsp";
-    src = pkgs.fetchFromGitHub {
-      owner = "hrsh7th";
-      repo = "cmp-nvim-lsp";
-      rev = "99290b3ec1322070bcfb9e846450a46f6efa50f0";
-      sha256 = "sha256-iaihXNCF5bB5MdeoosD/kc3QtpA/QaIDZVLiLIurBSM=";
-    };
-  };
-  cmp-path = pkgs.vimUtils.buildVimPlugin {
-    name = "cmp-path";
-    src = pkgs.fetchFromGitHub {
-      owner = "hrsh7th";
-      repo = "cmp-path";
-      rev = "91ff86cd9c29299a64f968ebb45846c485725f23";
-      sha256 = "sha256-thppiiV3wjIaZnAXmsh7j3DUc6ceSCvGzviwFUnoPaI=";
-    };
-  };
-  cmp_luasnip = pkgs.vimUtils.buildVimPlugin {
-    name = "cmp_luasnip";
-    src = pkgs.fetchFromGitHub {
-      owner = "saadparwaiz1";
-      repo = "cmp_luasnip";
-      rev = "98d9cb5c2c38532bd9bdb481067b20fea8f32e90";
-      sha256 = "sha256-86lKQPPyqFz8jzuLajjHMKHrYnwW6+QOcPyQEx6B+gw=";
-    };
+    nvimSkipModules = [
+      "bufferline.utils"
+    ];
   };
   comment-nvim = pkgs.vimUtils.buildVimPlugin {
     name = "comment-nvim";
@@ -233,6 +253,21 @@ let
       rev = "1a31f824b9cd5bc6f342fc29e9a53b60d74af245";
       sha256 = "sha256-+Rji3UH32QQZADqQhMcJpgmkwbDumKaBlZO6cqNvUGY=";
     };
+    nvimSkipModules = [
+      "mason-lspconfig"
+      "mason-lspconfig.install"
+      "mason-lspconfig.server_configurations.drools_lsp.init"
+      "mason-lspconfig.server_configurations.solang.init"
+      "mason-lspconfig.server_configurations.angularls.init"
+      "mason-lspconfig.server_configurations.julials.init"
+      "mason-lspconfig.server_configurations.pylsp.init"
+      "mason-lspconfig.ensure_installed"
+      "mason-lspconfig.api.command"
+      "mason-lspconfig.mappings.server"
+      "mason-lspconfig.mappings.language"
+      "mason-lspconfig.typescript"
+      "mason-lspconfig.lspconfig_hook"
+    ];
   };
   mason-nvim = pkgs.vimUtils.buildVimPlugin {
     name = "mason-nvim";
@@ -242,6 +277,7 @@ let
       rev = "fc98833b6da5de5a9c5b1446ac541577059555be";
       sha256 = "sha256-5XlzwN4tLXsdP6XnpA3r2bvkEIiHM7qfF4nSr4pj4bw=";
     };
+    nvimSkipModules = [ "mason-vendor.zzlib.inflate-bwo" ];
   };
   mason-tool-installer-nvim = pkgs.vimUtils.buildVimPlugin {
     name = "mason-tool-installer-nvim";
@@ -251,6 +287,9 @@ let
       rev = "5639d58a3d11ff7c05c8e31e159bfedae55d7961";
       sha256 = "sha256-KUX0bmh3x1w37dhfON6QMaXNBUTHgAwQD7XJyJhpLxE=";
     };
+    nvimSkipModules = [
+      "mason-tool-installer"
+    ];
   };
   neotest = pkgs.vimUtils.buildVimPlugin {
     name = "neotest";
@@ -260,6 +299,46 @@ let
       rev = "dddbe8fe358b05b2b7e54fe4faab50563171a76d";
       sha256 = "sha256-a42VdqpE/HP3w5tzZIKr7QTq0qJuoq7ddSHr6LwvJko=";
     };
+    nvimSkipModules = [
+      "neotest.consumers.watch.init"
+      "neotest.consumers.benchmark"
+      "neotest.consumers.summary.init"
+      "neotest.consumers.summary.component"
+      "neotest.consumers.summary.summary"
+      "neotest.lib.ui.init"
+      "neotest.lib.ui.float"
+      "neotest.lib.treesitter.init"
+      "neotest.lib.file.init"
+      "neotest.lib.file.find"
+      "neotest.lib.subprocess"
+      "neotest.lib.window"
+      "neotest.lib.positions.init"
+      "neotest.lib.process.init"
+      "neotest.client.init"
+      "neotest.client.strategies.init"
+      "neotest.client.strategies.integrated.init"
+      "neotest.client.strategies.dap.init"
+      "neotest.client.state.init"
+      "neotest.client.events.init"
+      "neotest.client.runner"
+      "neotest.logging"
+      "neotest"
+      "neotest.types.init"
+      "neotest.types.fanout_accum"
+      "neotest.async"
+      "neotest.utils.init"
+      "neotest.adapters.init"
+      "neotest.consumers.diagnostic"
+      "neotest.consumers.init"
+      "neotest.consumers.jump"
+      "neotest.consumers.state.init"
+      "neotest.consumers.output_panel.init"
+      "neotest.consumers.run"
+      "neotest.consumers.quickfix"
+      "neotest.consumers.status"
+      "neotest.consumers.output"
+      "neotest.consumers.watch.watcher"
+    ];
   };
   nvim-nio = pkgs.vimUtils.buildVimPlugin {
     name = "nvim-nio";
@@ -287,6 +366,10 @@ let
       rev = "68f0e5c3dab23261a945272032ee6700af86227a";
       sha256 = "sha256-FUnYZWSJh5wAfXevH+nK+g/s4WhnzwxbW6a3gUDQI6o=";
     };
+    nvimSkipModules = [
+      "nvim-autopairs.completion.cmp"
+      "nvim-autopairs.completion.compe"
+    ];
   };
   nvim-lspconfig = pkgs.vimUtils.buildVimPlugin {
     name = "nvim-lspconfig";
@@ -305,6 +388,7 @@ let
       rev = "198720b4016af04c9590f375d714d5bf8afecc1a";
       sha256 = "sha256-MSfSbepp+sA0GHz2StzgcQgWMhd04fmW9swmUGLiuo4=";
     };
+    nvimSkipModules = [ "install_parsers" ];
   };
   nvim-treesitter-textobjects = pkgs.vimUtils.buildVimPlugin {
     name = "nvim-treesitter-textobjects";
@@ -314,6 +398,16 @@ let
       rev = "ab0950c53d1ae04da8e488aa762b450d5241dca2";
       sha256 = "sha256-fOE9KAFWcd2ptpecrW6AqXFZeXa7SKqWGg129LQlmes=";
     };
+    nvimSkipModules = [
+      "nvim-treesitter-textobjects"
+      "nvim-treesitter.textobjects.shared"
+      "nvim-treesitter.textobjects.move"
+      "nvim-treesitter.textobjects.swap"
+      "nvim-treesitter.textobjects.lsp_interop"
+      "nvim-treesitter.textobjects.attach"
+      "nvim-treesitter.textobjects.repeatable_move"
+      "nvim-treesitter.textobjects.select"
+    ];
   };
   nvim-web-devicons = pkgs.vimUtils.buildVimPlugin {
     name = "nvim-web-devicons";
@@ -332,6 +426,10 @@ let
       rev = "857c5ac632080dba10aae49dba902ce3abf91b35";
       sha256 = "sha256-8FV5RjF7QbDmQOQynpK7uRKONKbPRYbOPugf9ZxNvUs=";
     };
+    nvimSkipModules = [
+      "plenary.neorocks.init"
+      "plenary._meta._luassert"
+    ];
   };
   nvim-colorizer-lua = pkgs.vimUtils.buildVimPlugin {
     name = "nvim-colorizer-lua";
@@ -350,6 +448,7 @@ let
       rev = "2b0f0b7e03751cf8ed123322f9b02d8f73fa9df7";
       sha256 = "sha256-kb25N7Iv/NZKfbnJs6l8xj4CKqz48jIX17jPueMrX2Q=";
     };
+    nvimSkipModules = [ "rustaceanvim.neotest.init" ];
   };
   dir-telescope = pkgs.vimUtils.buildVimPlugin {
     name = "dir-telescope";
@@ -359,6 +458,13 @@ let
       rev = "805405b9f98dc3470f8676773dc0e6151a9158ed";
       sha256 = "sha256-B/cZUkjAVi52jopBwZJYmiaVf8PqnawusnSGOx7dDqs=";
     };
+    nvimSkipModules = [
+      "dir-telescope"
+      "dir-telescope.settings"
+      "dir-telescope.util.init"
+      "dir-telescope.features.grep-in-dir"
+      "dir-telescope.features.find-in-dir"
+    ];
   };
   telescope-fzf-native-nvim = pkgs.vimUtils.buildVimPlugin {
     name = "telescope-fzf-native-nvim";
@@ -368,6 +474,7 @@ let
       rev = "2a5ceff981501cff8f46871d5402cd3378a8ab6a";
       sha256 = "sha256-0dGvpN8Vn+aU6j8N0tTD8AOzOAHGemlPAcLKyqlWvlg=";
     };
+    nvimSkipModules = [ "fzf_lib" ];
   };
   telescope-nvim = pkgs.vimUtils.buildVimPlugin {
     name = "telescope-nvim";
@@ -377,6 +484,43 @@ let
       rev = "814f102cd1da3dc78c7d2f20f2ef3ed3cdf0e6e4";
       sha256 = "sha256-Di0UIBXcnReT+6BaCdzTTg2j7oGzzXw6KfS4VbrBelE=";
     };
+    nvimSkipModules = [
+      "telescope._"
+      "telescope.actions.generate"
+      "telescope.actions.history"
+      "telescope.actions.init"
+      "telescope.actions.layout"
+      "telescope.actions.set"
+      "telescope.actions.state"
+      "telescope.actions.utils"
+      "telescope.builtin.__diagnostics"
+      "telescope.builtin.__files"
+      "telescope.builtin.__git"
+      "telescope.builtin.__internal"
+      "telescope.builtin.__lsp"
+      "telescope.command"
+      "telescope.config"
+      "telescope.entry_manager"
+      "telescope.finders"
+      "telescope.finders.async_job_finder"
+      "telescope.finders.async_oneshot_finder"
+      "telescope.finders.async_static_finder"
+      "telescope.from_entry"
+      "telescope.log"
+      "telescope.make_entry"
+      "telescope.mappings"
+      "telescope.pickers"
+      "telescope.pickers.entry_display"
+      "telescope.pickers.highlights"
+      "telescope.previewers.buffer_previewer"
+      "telescope.previewers.init"
+      "telescope.previewers.previewer"
+      "telescope.previewers.term_previewer"
+      "telescope.previewers.utils"
+      "telescope.sorters"
+      "telescope.testharness.init"
+      "telescope.utils"
+    ];
   };
   telescope-ui-select-nvim = pkgs.vimUtils.buildVimPlugin {
     name = "telescope-ui-select-nvim";
@@ -422,6 +566,23 @@ let
       rev = "35e397ce467bedbbbb5bfcd0aa79727b59a08d4a";
       sha256 = "sha256-x32NzZYFK6yovlvE3W8NevYA0UT0qvwKle1irFwmuvM=";
     };
+    nvimSkipModules = [
+      "typescript-tools.tsserver"
+      "typescript-tools"
+      "typescript-tools.async"
+      "typescript-tools.protocol.text_document.code_action.init"
+      "typescript-tools.protocol.initialize"
+      "typescript-tools.capabilities"
+      "typescript-tools.tsserver_provider"
+      "typescript-tools.api"
+      "typescript-tools.internal_commands"
+      "typescript-tools.autocommands.jsx_close_tag"
+      "typescript-tools.autocommands.init"
+      "typescript-tools.autocommands.diagnostics"
+      "typescript-tools.rpc"
+      "typescript-tools.user_commands"
+      "typescript-tools.process"
+    ];
   };
   tokyonight-nvim = pkgs.vimUtils.buildVimPlugin {
     name = "tokyonight-nvim";
@@ -431,6 +592,10 @@ let
       rev = "057ef5d260c1931f1dffd0f052c685dcd14100a3";
       sha256 = "sha256-1xZhQR1BhH2eqax0swlNtnPWIEUTxSOab6sQ3Fv9WQA=";
     };
+    nvimSkipModules = [
+      "tokyonight.extra.fzf"
+      "tokyonight.docs"
+    ];
   };
   #  = pkgs.vimUtils.buildVimPlugin {
   #   name = "";
@@ -444,14 +609,10 @@ let
   plugins = [
     FixCursorHold-nvim
     barbar-nvim
-    cmp-nvim-lsp
-    cmp-path
-    cmp_luasnip
     comment-nvim
     conform-nvim
     crates-nvim
     cyberpunk-nvim
-    dir-telescope
     dir-telescope
     fidget-nvim
     friendly-snippets
@@ -469,7 +630,6 @@ let
     mason-tool-installer-nvim
     neotest
     nvim-autopairs
-    nvim-cmp
     nvim-colorizer-lua
     nvim-lspconfig
     nvim-nio
@@ -478,6 +638,7 @@ let
     nvim-web-devicons
     pest-nvim
     pkgs.vimPlugins.nvim-treesitter.withAllGrammars
+    blink-cmp
     plenary-nvim
     rustaceanvim
     statuscolumn-nvim
