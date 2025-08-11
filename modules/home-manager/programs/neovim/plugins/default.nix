@@ -5,8 +5,8 @@ let
     src = pkgs.fetchFromGitHub {
       owner = "saecki";
       repo = "crates.nvim";
-      rev = "1803c8b5516610ba7cdb759a4472a78414ee6cd4";
-      sha256 = "sha256-xuRth8gfX6ZTV3AUBaTM9VJr7ulsNFxtKEsFDZduDC8=";
+      rev = "33ec63096f7f72b610ed3bb1760be34c2fffb694";
+      sha256 = "sha256-7TnexolxNjkytFInl5m7VjthAb+uMDcejTcL2pArBAo=";
     };
     nvimSkipModules = [
       "crates.null-ls"

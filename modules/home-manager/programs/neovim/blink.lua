@@ -9,13 +9,10 @@ blink.setup({
 		accept = { auto_brackets = { enabled = true } },
 		documentation = { auto_show = true },
 	},
+	fuzzy = { implementation = "lua" },
 	keymap = {
 		-- [""] = { function(cmp) end },
-		["<CR>"] = {
-			function(cmp)
-				cmp.select_and_accept()
-			end,
-		},
+		["<CR>"] = { "accept", "fallback" },
 		["<Tab>"] = {
 			function(cmp)
 				cmp.select_next()
