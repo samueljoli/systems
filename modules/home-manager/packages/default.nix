@@ -38,6 +38,7 @@ let
     ast-grep
     yazi
     copier
+    claude-code
   ];
 in
 infraTools ++ gitTools ++ nixTools ++ toys ++ buildTools

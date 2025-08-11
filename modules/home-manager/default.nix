@@ -26,8 +26,12 @@
 
   nixpkgs = {
     overlays = [
+      inputs.claude-code.overlays.default
       inputs.neovim-nightly-overlay.overlays.default
     ];
+    config = {
+      allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [ "claude-code" ];
+    };
   };
 
   programs = import ./programs {
