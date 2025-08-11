@@ -2,16 +2,13 @@
   pkgs,
   inputs,
   system,
+  username,
   ...
 }:
 {
   system.stateVersion = 5;
 
-  system.activationScripts.postUserActivation.text = ''
-    # activateSettings -u will reload the settings from the database and apply them to the current session,
-    # so we do not need to logout and login again to make the changes take effect.
-    /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
-  '';
+  system.primaryUser = username;
 
   # Set Git commit hash for darwin-version.
   system.configurationRevision = inputs.self.rev or inputs.self.dirtyRev or null;
@@ -32,7 +29,7 @@
   time.timeZone = "America/New_York";
 
   # Add ability to used TouchID for sudo authentication
-  security.pam.enableSudoTouchIdAuth = true;
+  security.pam.services.sudo_local.touchIdAuth = true;
 
   environment.shells = [ pkgs.zsh ];
 
@@ -41,9 +38,10 @@
   ];
 
   fonts.packages = with pkgs; [
-    roboto-mono
-    font-awesome
-    nerdfonts
+    nerd-fonts._0xproto
+    nerd-fonts.droid-sans-mono
+    nerd-fonts.roboto-mono
+    # font-awesome
   ];
 
   # Create /etc/zshrc that loads the nix-darwin environment.
