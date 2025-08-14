@@ -24,5 +24,6 @@
     yabai -m rule --add app="Messages" manage=off
     yabai -m rule --add app="System Settings" manage=off
     yabai -m rule --add app="Downloads" manage=off
+    yabai -m rule --add app="Finder" manage=off
   '';
 }

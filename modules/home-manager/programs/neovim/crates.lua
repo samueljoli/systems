@@ -7,7 +7,6 @@ require("crates").setup({
 	},
 	completion = {
 		blink = {
-			enabled = true,
 			use_custom_kind = true,
 			kind_text = {
 				version = "Version",

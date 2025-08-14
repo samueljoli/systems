@@ -597,6 +597,15 @@ let
       "tokyonight.docs"
     ];
   };
+  claude-code = pkgs.vimUtils.buildVimPlugin {
+    name = "claude-code.nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "greggh";
+      repo = "claude-code.nvim";
+      rev = "c9a31e51069977edaad9560473b5d031fcc5d38b";
+      sha256 = "sha256-ZEIPutxhgyaAhq+fJw1lTO781IdjTXbjKy5yKgqSLjM=";
+    };
+  };
   #  = pkgs.vimUtils.buildVimPlugin {
   #   name = "";
   #   src = pkgs.fetchFromGitHub {
@@ -608,6 +617,7 @@ let
   # };
   plugins = [
     FixCursorHold-nvim
+    claude-code
     barbar-nvim
     comment-nvim
     conform-nvim

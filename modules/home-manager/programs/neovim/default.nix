@@ -30,6 +30,7 @@
     ${builtins.readFile ./crates.lua}
     ${builtins.readFile ./neotest.lua}
     ${builtins.readFile ./blink.lua}
+    ${builtins.readFile ./claude.lua}
     ${builtins.readFile ./todo-comments.lua}
   '';
 
