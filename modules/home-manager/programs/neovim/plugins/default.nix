@@ -12,6 +12,65 @@ let
       "crates.null-ls"
     ];
   };
+  nvim-cmp = pkgs.vimUtils.buildVimPlugin {
+    name = "nvim-cmp";
+    src = pkgs.fetchFromGitHub {
+      owner = "hrsh7th";
+      repo = "nvim-cmp";
+      rev = "c27370703e798666486e3064b64d59eaf4bdc6d5";
+      sha256 = "sha256-apIVfiETv9ZN1itKiuCXpDA+Pr7vn4Tjdkr2gaBN6Ew=";
+    };
+    nvimSkipModules = [
+      "cmp_luasnip"
+      "cmp_path"
+      "cmp.matcher_spec"
+      "cmp.types.lsp_spec"
+      "cmp.utils.api_spec"
+      "cmp.utils.binary_spec"
+      "cmp.utils.misc_spec"
+      "cmp.utils.feedkeys_spec"
+      "cmp.utils.str_spec"
+      "cmp.utils.async_spec"
+      "cmp.utils.keymap_spec"
+      "cmp.context_spec"
+      "cmp.core_spec"
+      "cmp.entry_spec"
+      "cmp.source_spec"
+    ];
+  };
+  cmp-nvim-lsp = pkgs.vimUtils.buildVimPlugin {
+    name = "cmp-nvim-lsp";
+    src = pkgs.fetchFromGitHub {
+      owner = "hrsh7th";
+      repo = "cmp-nvim-lsp";
+      rev = "99290b3ec1322070bcfb9e846450a46f6efa50f0";
+      sha256 = "sha256-iaihXNCF5bB5MdeoosD/kc3QtpA/QaIDZVLiLIurBSM=";
+    };
+  };
+  cmp-path = pkgs.vimUtils.buildVimPlugin {
+    name = "cmp-path";
+    src = pkgs.fetchFromGitHub {
+      owner = "hrsh7th";
+      repo = "cmp-path";
+      rev = "91ff86cd9c29299a64f968ebb45846c485725f23";
+      sha256 = "sha256-thppiiV3wjIaZnAXmsh7j3DUc6ceSCvGzviwFUnoPaI=";
+    };
+    nvimSkipModules = [
+      "cmp_path"
+    ];
+  };
+  cmp_luasnip = pkgs.vimUtils.buildVimPlugin {
+    name = "cmp_luasnip";
+    src = pkgs.fetchFromGitHub {
+      owner = "saadparwaiz1";
+      repo = "cmp_luasnip";
+      rev = "98d9cb5c2c38532bd9bdb481067b20fea8f32e90";
+      sha256 = "sha256-86lKQPPyqFz8jzuLajjHMKHrYnwW6+QOcPyQEx6B+gw=";
+    };
+    nvimSkipModules = [
+      "cmp_luasnip"
+    ];
+  };
   blink-cmp = pkgs.vimUtils.buildVimPlugin {
     name = "blink.cmp";
     src = pkgs.fetchFromGitHub {
@@ -20,7 +79,6 @@ let
       rev = "af22c527a451d162e5229a1eff9283ee840b4bca";
       sha256 = "sha256-WnXCVNU5if/2pODUNpyMtEssRXgpmGqEhwUAbL9AN1Q=";
     };
-
     nvimSkipModules = [
       "repro"
       "blink.cmp.fuzzy.rust.init"
@@ -616,6 +674,10 @@ let
   #   };
   # };
   plugins = [
+    cmp-nvim-lsp
+    cmp-path
+    cmp_luasnip
+    nvim-cmp
     FixCursorHold-nvim
     claude-code
     barbar-nvim

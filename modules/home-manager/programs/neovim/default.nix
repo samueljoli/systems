@@ -19,6 +19,8 @@
     ${builtins.readFile ./comment.lua}
     ${builtins.readFile ./gitsigns.lua}
     ${builtins.readFile ./colorizer.lua}
+    ${builtins.readFile ./autopairs.lua}
+    ${builtins.readFile ./cmp.lua}
     ${builtins.readFile ./heirline.lua}
     ${builtins.readFile ./lazydev.lua}
     ${builtins.readFile ./conform.lua}
@@ -29,7 +31,6 @@
     ${builtins.readFile ./barbar.lua}
     ${builtins.readFile ./crates.lua}
     ${builtins.readFile ./neotest.lua}
-    ${builtins.readFile ./blink.lua}
     ${builtins.readFile ./claude.lua}
     ${builtins.readFile ./todo-comments.lua}
   '';
