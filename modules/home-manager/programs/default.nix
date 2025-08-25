@@ -1,6 +1,7 @@
 {
   inputs,
   pkgs,
+  system,
   ...
 }:
 
@@ -33,6 +34,12 @@
   };
 
   starship = import ./starship.nix { inherit pkgs; };
+
+  zed-editor = import ./zed/default.nix {
+    inherit pkgs;
+    inherit inputs;
+    inherit system;
+  };
 
   zsh = import ./zsh/default.nix { inherit pkgs; };
 

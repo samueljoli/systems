@@ -37,6 +37,7 @@
   programs = import ./programs {
     inherit pkgs;
     inherit inputs;
+    inherit system;
   };
 
   home.file = {
