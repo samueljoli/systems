@@ -19,6 +19,7 @@ let
   infraTools = with pkgs; [
     awscli2
     tailscale
+    flyctl
   ];
 
   nixTools = with pkgs; [
