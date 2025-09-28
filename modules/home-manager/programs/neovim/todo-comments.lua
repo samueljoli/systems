@@ -11,5 +11,12 @@ todo.setup({
 			color = "error", -- can be a hex color, or a named color (see below)
 			alt = { "FIXME", "BUG", "FIXIT", "ERROR" }, -- a set of other keywords that all map to this FIX keywords
 		},
+		TODO = {
+			alt = { "INSTRUMENT", "DOCS", "EXAMPLE" },
+		},
+		LEARN = {
+			icon = "🧠",
+			color = "#FF0065",
+		},
 	},
 })
