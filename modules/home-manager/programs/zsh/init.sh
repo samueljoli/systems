@@ -81,3 +81,7 @@ function dev { # Convenience method for quickly creating a flake
 
   direnv allow
 }
+
+function docker-clean {
+  docker system prune -a -f --volumes
+}
