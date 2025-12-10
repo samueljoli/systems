@@ -5,6 +5,14 @@ luasnip.filetype_extend("typescript", { "javascript" })
 luasnip.config.setup({})
 
 cmp.setup({
+	window = {
+		-- documentation = cmp.config.window.bordered(),
+		documentation = {
+			border = "rounded",
+			side_padding = 1,
+			col_offset = 3, -- Right of completion
+		},
+	},
 	snippet = {
 		expand = function(args)
 			luasnip.lsp_expand(args.body)

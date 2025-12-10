@@ -15,3 +15,9 @@ vim.keymap.set("n", "<C-h>", ":wincmd h<CR>", { noremap = true, desc = "Move to 
 vim.keymap.set("n", "<C-l>", ":wincmd l<CR>", { noremap = true, desc = "Move to next buffer" })
 
 vim.keymap.set("n", "<leader><Esc>", ":exit<CR>", { noremap = true, desc = "Close vim", silent = true })
+
+-- TODO: Fix the issue with always pressing the record button that then turns off autocomplete
+--
+--
+-- let [r, g, b, a] = p.0; // NOTE  Better destructuring
+--                         // < -------------- FIXME: when creating newline and it doesn't drop into proper identiation with comments
