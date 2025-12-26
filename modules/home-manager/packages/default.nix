@@ -18,7 +18,7 @@ let
 
   infraTools = with pkgs; [
     awscli2
-    tailscale
+    # tailscale
     flyctl
   ];
 

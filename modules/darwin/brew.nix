@@ -31,7 +31,7 @@
     "shortcat"
     "shottr"
     "tableplus"
-    "tailscale"
+    # "tailscale"
     "zen-browser"
   ];
 }
