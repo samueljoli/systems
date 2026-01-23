@@ -664,6 +664,15 @@ let
       sha256 = "sha256-ZEIPutxhgyaAhq+fJw1lTO781IdjTXbjKy5yKgqSLjM=";
     };
   };
+  vim-nickel = pkgs.vimUtils.buildVimPlugin {
+    name = "nickel-lang/vim-nickel";
+    src = pkgs.fetchFromGitHub {
+      owner = "nickel-lang";
+      repo = "vim-nickel";
+      rev = "f22898d88affc0958453b42e1147ba076637e0ed";
+      sha256 = "sha256-wb8UNs0eF6939pjZWafDoFgRh/10rKorJFZtPbTkn/k=";
+    };
+  };
   #  = pkgs.vimUtils.buildVimPlugin {
   #   name = "";
   #   src = pkgs.fetchFromGitHub {
@@ -722,6 +731,7 @@ let
     tokyonight-nvim
     typescript-tools-nvim
     vim-fugitive
+    vim-nickel
     vim-nix
     vim-rhubarb
     yazi-nvim
