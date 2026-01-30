@@ -12,7 +12,8 @@
       editor = "nvim";
       whitespace = "trailing-space,space-before-tab";
     };
-    # commit.gpgsign = "true";
+    gpg.format = "ssh";
+    commit.gpgsign = true;
     init.defaultBranch = "main";
     protocol.keybase.allow = "always";
     pull.rebase = "false";
