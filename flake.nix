@@ -44,6 +44,10 @@
       username = "sjoli";
       system = "aarch64-darwin";
       rebuild = pkgs.writeShellScriptBin "rebuild" (builtins.readFile ./scripts/rebuild.sh);
+      vim_pkg = pkgs.writeShellScriptBin "vim_pkg" ''
+        #!/usr/bin/env bash
+        exec ${pkgs.nodejs_24}/bin/node ${./scripts/prefetch_vim_pkgs.js} "$@"
+      '';
       pkgs = import inputs.nixpkgs { inherit system; };
       utils = import ./utils { inherit pkgs; };
       nix-lsp-server = inputs.nil.packages.${system}.nil;
@@ -64,6 +68,7 @@
       devShells.${system}.default = pkgs.mkShell {
         packages = [
           rebuild
+          vim_pkg
           nix-lsp-server
           nixfmt-rfc-style
           pkgs.lua-language-server

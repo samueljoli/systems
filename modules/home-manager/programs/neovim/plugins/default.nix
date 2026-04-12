@@ -673,6 +673,15 @@ let
       sha256 = "sha256-wb8UNs0eF6939pjZWafDoFgRh/10rKorJFZtPbTkn/k=";
     };
   };
+  render-markdown-nvim = pkgs.vimUtils.buildVimPlugin {
+    name = "MeanderingProgrammer/render-markdown.nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "MeanderingProgrammer";
+      repo = "render-markdown.nvim";
+      rev = "54d4b5431e9634ee3d8d30784e017239b5b89d41";
+      sha256 = "sha256-lxxAjZ1z9zrtSjskNzRMGD1Fy60BPR1ZcS9dktrqzWE=";
+    };
+  };
   #  = pkgs.vimUtils.buildVimPlugin {
   #   name = "";
   #   src = pkgs.fetchFromGitHub {
@@ -700,6 +709,7 @@ let
     gitsigns-nvim
     grug-far-nvim
     gruvbox-nvim
+    render-markdown-nvim
     heirline-components-nvim
     heirline-nvim
     hop-nvim

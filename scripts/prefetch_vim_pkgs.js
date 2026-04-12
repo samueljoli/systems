@@ -90,8 +90,20 @@ async function main(plugins, head) {
   }
 }
 
-const plugins = [
-  "" // NOTE: Add plugins and run script
-];
+// Parse command line arguments for plugins
+// Usage: node scripts/prefetch_vim_pkgs.js plugin1,plugin2,plugin3
+// Or: node scripts/prefetch_vim_pkgs.js plugin1 plugin2 plugin3
+const args = process.argv.slice(2);
+
+let plugins;
+if (args.length > 0) {
+  // Join all arguments and split by comma to support both formats
+  plugins = args.join(',').split(',').map(p => p.trim()).filter(p => p);
+} else {
+  // Fallback to hardcoded plugins if no arguments provided
+  plugins = [
+    "" // NOTE: Add plugins and run script
+  ];
+}
 
 main(plugins, 'main');
