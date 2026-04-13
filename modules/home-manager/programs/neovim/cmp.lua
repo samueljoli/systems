@@ -20,6 +20,20 @@ cmp.setup({
 	},
 	completion = { completeopt = "menu,menuone,noinsert" },
 
+	sorting = {
+		comparators = {
+			cmp.config.compare.offset,
+			cmp.config.compare.exact,
+			cmp.config.compare.score,
+			cmp.config.compare.recently_used,
+			cmp.config.compare.locality,
+			cmp.config.compare.kind,
+			cmp.config.compare.sort_text,
+			cmp.config.compare.length,
+			cmp.config.compare.order,
+		},
+	},
+
 	-- For an understanding of why these mappings were
 	-- chosen, you will need to read `:help ins-completion`
 	--
