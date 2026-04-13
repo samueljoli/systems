@@ -12,7 +12,7 @@ vim.g.rustaceanvim = {
 					excludeDirs = { ".direnv" },
 				},
 				diagnostic = {
-					refreshSupport = false,
+					refreshSupport = true,
 				},
 			},
 		},
