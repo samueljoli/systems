@@ -21,6 +21,7 @@
 
     packages = import ./packages { inherit pkgs; } ++ [
       inputs.baouncer.packages.${system}.default
+      inputs.kopye.packages.${system}.default
     ];
   };
 
