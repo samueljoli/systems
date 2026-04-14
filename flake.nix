@@ -76,6 +76,7 @@
           nix-lsp-server
           nixfmt-rfc-style
           pkgs.lua-language-server
+          pkgs.just
           # For scripting with node
           pkgs.nodejs_24
           pkgs.typescript
