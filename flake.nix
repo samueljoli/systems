@@ -33,6 +33,10 @@
       url = "github:lalilul3lo/baouncer";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    kopye = {
+      url = "github:lalilul3lo/kopye";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     claude-code = {
       url = "github:sadjow/claude-code-nix";
     };
