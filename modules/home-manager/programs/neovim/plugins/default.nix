@@ -514,13 +514,14 @@ let
     };
   };
   rustaceanvim = pkgs.vimUtils.buildVimPlugin {
-    name = "rustaceanvim";
+    name = "mrcjkb/rustaceanvim";
     src = pkgs.fetchFromGitHub {
       owner = "mrcjkb";
       repo = "rustaceanvim";
-      rev = "2b0f0b7e03751cf8ed123322f9b02d8f73fa9df7";
-      sha256 = "sha256-kb25N7Iv/NZKfbnJs6l8xj4CKqz48jIX17jPueMrX2Q=";
+      rev = "231bbfbba864b09248264c9f28f1fd7c14cd216f";
+      sha256 = "sha256-qpVM6rpaJTvyU3OJZZqht+fTJwbpTp54otknwayF610=";
     };
+
     nvimSkipModules = [ "rustaceanvim.neotest.init" ];
   };
   dir-telescope = pkgs.vimUtils.buildVimPlugin {
