@@ -7,6 +7,7 @@
   vimAlias = true;
   vimdiffAlias = true;
   extraLuaConfig = ''
+    ${builtins.readFile ./rustaceanvim.lua}
     ${builtins.readFile ./options.lua}
     ${builtins.readFile ./keymaps.lua}
     ${builtins.readFile ./lsp.lua}
@@ -27,7 +28,6 @@
     ${builtins.readFile ./grug.lua}
     ${builtins.readFile ./tint.lua}
     ${builtins.readFile ./statuscolumn.lua}
-    ${builtins.readFile ./rustaceanvim.lua}
     ${builtins.readFile ./barbar.lua}
     ${builtins.readFile ./crates.lua}
     ${builtins.readFile ./neotest.lua}
@@ -35,7 +35,7 @@
     ${builtins.readFile ./todo-comments.lua}
   '';
 
-  plugins = import ./plugins/default.nix { inherit pkgs; };
+  plugins = import ./plugins/default.nix { inherit inputs pkgs; };
 
   extraLuaPackages = ps: [ ps.jsregexp ];
 }
