@@ -681,7 +681,8 @@
         "nil": "nil_3",
         "nix-darwin": "nix-darwin",
         "nix-homebrew": "nix-homebrew",
-        "nixpkgs": "nixpkgs_8"
+        "nixpkgs": "nixpkgs_8",
+        "tree-sitter-achitek": "tree-sitter-achitek"
       }
     },
     "rust-overlay": {
@@ -872,6 +873,22 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "tree-sitter-achitek": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1777120133,
+        "narHash": "sha256-WeUq/1+KtfYPhloDwmj6LsuJHxa056bPivkJrXk0Bac=",
+        "owner": "achitek-org",
+        "repo": "tree-sitter-achitek",
+        "rev": "2dc657734c4ccdb57d4c19a87548922664126c5b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "achitek-org",
+        "repo": "tree-sitter-achitek",
         "type": "github"
       }
     },

@@ -1,5 +1,20 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 let
+  tree-sitter-achitekfile = pkgs.tree-sitter.buildGrammar {
+    language = "achitekfile";
+    version = "0.1.0";
+    src = inputs.tree-sitter-achitek;
+    location = ".";
+  };
+  achitek-nvim = pkgs.vimUtils.buildVimPlugin {
+    name = "achitek-org/achitek.nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "achitek-org";
+      repo = "achitek.nvim";
+      rev = "8806dee9e7c44ac070969b29e14c8bab13394030";
+      sha256 = "sha256-7s1t+f1oSQr4rRPgwwFH+IsDgA9BoqmS0UDiGrF27A0=";
+    };
+  };
   crates-nvim = pkgs.vimUtils.buildVimPlugin {
     name = "crates-nvim";
     src = pkgs.fetchFromGitHub {
@@ -692,6 +707,7 @@ let
   #   };
   # };
   plugins = [
+    achitek-nvim
     cmp-nvim-lsp
     cmp-path
     cmp_luasnip
@@ -728,7 +744,9 @@ let
     nvim-treesitter-textobjects
     nvim-web-devicons
     pest-nvim
-    pkgs.vimPlugins.nvim-treesitter.withAllGrammars
+    (pkgs.vimPlugins.nvim-treesitter.withPlugins (
+      _: pkgs.vimPlugins.nvim-treesitter.allGrammars ++ [ tree-sitter-achitekfile ]
+    ))
     blink-cmp
     plenary-nvim
     rustaceanvim

@@ -11,6 +11,7 @@
     ${builtins.readFile ./options.lua}
     ${builtins.readFile ./keymaps.lua}
     ${builtins.readFile ./lsp.lua}
+    ${builtins.readFile ./achitek.lua}
     ${builtins.readFile ./cyberpunk.lua}
     ${builtins.readFile ./tokyo_night.lua}
     ${builtins.readFile ./treesitter.lua}
