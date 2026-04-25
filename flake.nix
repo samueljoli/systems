@@ -40,6 +40,10 @@
     claude-code = {
       url = "github:sadjow/claude-code-nix";
     };
+    tree-sitter-achitek = {
+      url = "github:achitek-org/tree-sitter-achitek";
+      flake = false;
+    };
   };
 
   outputs =
