@@ -8,15 +8,6 @@ vim.g.rustaceanvim = {
 		default_settings = {
 			-- rust-analyzer language server configuration
 			["rust-analyzer"] = {
-				cachePriming = {
-					enable = false,
-				},
-				cargo = {
-					allTargets = false,
-				},
-				check = {
-					allTargets = false,
-				},
 				files = {
 					excludeDirs = {
 						".direnv",

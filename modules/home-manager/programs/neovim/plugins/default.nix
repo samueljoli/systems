@@ -11,8 +11,8 @@ let
     src = pkgs.fetchFromGitHub {
       owner = "achitek-org";
       repo = "achitek.nvim";
-      rev = "8806dee9e7c44ac070969b29e14c8bab13394030";
-      sha256 = "sha256-7s1t+f1oSQr4rRPgwwFH+IsDgA9BoqmS0UDiGrF27A0=";
+      rev = "c831af1826c636085bff1e5c4761ad09ec70585f";
+      sha256 = "sha256-6TNRtKlEyvcIF4T3UcezbjZnCoUC5ckfBE6+mayP2K8=";
     };
   };
   crates-nvim = pkgs.vimUtils.buildVimPlugin {
