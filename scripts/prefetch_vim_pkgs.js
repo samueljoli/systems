@@ -91,11 +91,20 @@ async function main(plugins, head) {
 }
 
 // Parse command line arguments for plugins
-// Usage: node scripts/prefetch_vim_pkgs.js plugin1,plugin2,plugin3
-// Or: node scripts/prefetch_vim_pkgs.js plugin1 plugin2 plugin3
+// Usage: node scripts/prefetch_vim_pkgs.js plugin1,plugin2,plugin3 [--ref branch]
+// Or: node scripts/prefetch_vim_pkgs.js plugin1 plugin2 plugin3 [--ref branch]
 const args = process.argv.slice(2);
 
 let plugins;
+let refBranch = 'main';
+
+// Check for --ref flag
+const refIndex = args.indexOf('--ref');
+if (refIndex !== -1 && refIndex + 1 < args.length) {
+  refBranch = args[refIndex + 1];
+  args.splice(refIndex, 2); // Remove --ref and its value
+}
+
 if (args.length > 0) {
   // Join all arguments and split by comma to support both formats
   plugins = args.join(',').split(',').map(p => p.trim()).filter(p => p);
@@ -106,4 +115,4 @@ if (args.length > 0) {
   ];
 }
 
-main(plugins, 'main');
+main(plugins, refBranch);
