@@ -1,5 +1,44 @@
 { inputs, pkgs, ... }:
 let
+  octo-nvim = pkgs.vimUtils.buildVimPlugin {
+    name = "pwntester/octo.nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "pwntester";
+      repo = "octo.nvim";
+      rev = "34e67cc2d247e9b9271e2b54baeb6d4f6d1035bb";
+      sha256 = "sha256-rwOQs1l7j+GvbaJ1Vj42HE+lWcZrFKfTqDcvuACCDgE=";
+    };
+    nvimSkipModules = [
+      "octo.pickers.fzf-lua.entry_maker"
+      "octo.pickers.fzf-lua.pickers.review_commits"
+      "octo.pickers.fzf-lua.pickers.assignees"
+      "octo.pickers.fzf-lua.pickers.prs"
+      "octo.pickers.fzf-lua.pickers.actions"
+      "octo.pickers.fzf-lua.pickers.assigned_labels"
+      "octo.pickers.fzf-lua.pickers.issues"
+      "octo.pickers.fzf-lua.pickers.project_columns_v2"
+      "octo.pickers.fzf-lua.pickers.pending_threads"
+      "octo.pickers.fzf-lua.pickers.repos"
+      "octo.pickers.fzf-lua.pickers.search"
+      "octo.pickers.fzf-lua.pickers.users"
+      "octo.pickers.fzf-lua.pickers.commits"
+      "octo.pickers.fzf-lua.pickers.notifications"
+      "octo.pickers.fzf-lua.pickers.issue_templates"
+      "octo.pickers.fzf-lua.pickers.project_cards_v2"
+      "octo.pickers.fzf-lua.pickers.changed_files"
+      "octo.pickers.fzf-lua.pickers.utils"
+      "octo.pickers.fzf-lua.pickers.labels"
+      "octo.pickers.fzf-lua.pickers.gists"
+      "octo.pickers.fzf-lua.pickers.fzf_actions"
+      "octo.pickers.fzf-lua.log"
+      "octo.pickers.fzf-lua.provider"
+      "octo.pickers.fzf-lua.previewers"
+      "octo.pickers.telescope.entry_maker"
+      "octo.pickers.telescope.previewers"
+      "octo.pickers.telescope.provider"
+      "octo.pickers.snacks.provider"
+    ];
+  };
   tree-sitter-achitekfile = pkgs.tree-sitter.buildGrammar {
     language = "achitekfile";
     version = "0.1.0";
@@ -709,6 +748,7 @@ let
   # };
   plugins = [
     achitek-nvim
+    octo-nvim
     cmp-nvim-lsp
     cmp-path
     cmp_luasnip
