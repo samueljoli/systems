@@ -37,6 +37,9 @@
       url = "github:lalilul3lo/kopye";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    achitek = {
+      url = "github:achitek-org/achitek";
+    };
     claude-code = {
       url = "github:sadjow/claude-code-nix/faa8786775fa232366f95a6f8dc2de67a1fea0e5";
     };
