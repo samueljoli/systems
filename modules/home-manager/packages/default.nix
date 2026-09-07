@@ -32,6 +32,7 @@ let
   ];
 
   toys = with pkgs; [
+    tpi
     bat
     fzf
     oha

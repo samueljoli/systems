@@ -20,6 +20,11 @@
 
   homebrew.enable = true;
 
+  homebrew.brews = [
+    "libusb"
+    "pkg-config"
+  ];
+
   homebrew.casks = [
     "1password"
     "charles"
@@ -32,6 +37,6 @@
     "shottr"
     "tableplus"
     # "tailscale"
-    "zen-browser"
+    # "zen-browser"
   ];
 }
