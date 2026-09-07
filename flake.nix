@@ -69,10 +69,7 @@
       };
 
     in
-    machines.forEach (machine: {
-      darwinConfigurations.${machine.hostname} = machine.darwinConfiguration inputs;
-      homeConfigurations.${username} = machine.homeConfiguration inputs;
-    })
+    machines.forEach (machine: machine.mkOutputs inputs)
     // {
       # expose rebuild script in this environment
       devShells.${system}.default = pkgs.mkShell {
@@ -90,7 +87,8 @@
         ];
       };
 
-      apps.${system} = machines.forEach utils.generateApp;
+      # bootstrap apps target darwin only; nixos hosts are installed via BMC flash.
+      apps.${system} = builtins.foldl' (acc: m: acc // utils.generateApp m) { } machines.darwinHosts;
 
       formatter.${system} = nixfmt-rfc-style;
     };

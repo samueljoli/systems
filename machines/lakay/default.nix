@@ -6,9 +6,9 @@
 }:
 rec {
   hostname = "lakay-air";
-  darwinConfiguration =
-    inputs:
-    inputs.nix-darwin.lib.darwinSystem {
+  isDarwin = true;
+  mkOutputs = inputs: {
+    darwinConfigurations.${hostname} = inputs.nix-darwin.lib.darwinSystem {
       modules = [
         inputs.nix-homebrew.darwinModules.nix-homebrew
         inputs.home-manager.darwinModules.home-manager
@@ -25,9 +25,7 @@ rec {
         system = system;
       };
     };
-  homeConfiguration =
-    inputs:
-    inputs.home-manager.lib.homeManagerConfiguration rec {
+    homeConfigurations.${username} = inputs.home-manager.lib.homeManagerConfiguration {
       pkgs = inputs.nixpkgs.legacyPackages.${system};
 
       modules = [
@@ -40,4 +38,5 @@ rec {
         inherit system;
       };
     };
+  };
 }
