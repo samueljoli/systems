@@ -23,6 +23,7 @@
       inputs.baouncer.packages.${system}.default
       inputs.kopye.packages.${system}.default
       inputs.achitek.packages.${system}.default
+      inputs.pi-agent.packages.${system}.default
     ];
   };
 

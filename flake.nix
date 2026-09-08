@@ -43,6 +43,9 @@
     claude-code = {
       url = "github:sadjow/claude-code-nix/faa8786775fa232366f95a6f8dc2de67a1fea0e5";
     };
+    pi-agent = {
+      url = "github:lukasl-dev/pi.nix";
+    };
     tree-sitter-achitek = {
       url = "github:achitek-org/tree-sitter-achitek";
       flake = false;
