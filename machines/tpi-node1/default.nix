@@ -7,7 +7,6 @@ rec {
   hostname = "tpi-node1";
   system = "aarch64-linux";
   isDarwin = false;
-  # ponytail: stub to prove nixosConfigurations output shape; real modules land next.
   mkOutputs = inputs: {
     nixosConfigurations.${hostname} = inputs.nixpkgs.lib.nixosSystem {
       inherit system;
@@ -15,20 +14,18 @@ rec {
         inherit inputs username hostname;
       };
       modules = [
+        "${inputs.nixpkgs}/nixos/modules/installer/sd-card/sd-image-aarch64.nix"
+        inputs.nixos-hardware.nixosModules.raspberry-pi-4
+        ../../modules/nixos/common.nix
+        ../../modules/nixos/ssh.nix
+        ../../modules/nixos/tailscale.nix
+        ../../modules/nixos/netdata.nix
+        ../../modules/nixos/lab-tools.nix
         (
           { ... }:
           {
             networking.hostName = hostname;
             system.stateVersion = "24.11";
-            users.users.${username} = {
-              isNormalUser = true;
-              extraGroups = [ "wheel" ];
-            };
-            fileSystems."/" = {
-              device = "/dev/disk/by-label/nixos";
-              fsType = "ext4";
-            };
-            boot.loader.grub.enable = false;
           }
         )
       ];
