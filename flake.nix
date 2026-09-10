@@ -22,10 +22,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nil = {
-      url = "github:oxalica/nil/c8e8ce72442a164d89d3fdeaae0bcc405f8c015a";
-      flake = true;
-    };
     neovim-nightly-overlay = {
       url = "github:nix-community/neovim-nightly-overlay";
     };
@@ -64,7 +60,7 @@
       '';
       pkgs = import inputs.nixpkgs { inherit system; };
       utils = import ./utils { inherit pkgs; };
-      nix-lsp-server = inputs.nil.packages.${system}.nil;
+      nix-lsp-server = pkgs.nil;
       nixfmt-rfc-style = inputs.nixpkgs.legacyPackages.${system}.nixfmt-rfc-style;
       machines = import ./machines {
         inherit inputs;
