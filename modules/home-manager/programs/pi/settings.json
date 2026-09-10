@@ -4,6 +4,7 @@
   "defaultProvider": "anthropic",
   "defaultModel": "claude-opus-4-8",
   "packages": [
-    "npm:pi-powerline-footer"
+    "npm:pi-powerline-footer",
+    "npm:pi-markdown-preview"
   ]
 }
