@@ -3,6 +3,7 @@
   inputs,
   username,
   system,
+  config,
   ...
 }:
 {
@@ -45,5 +46,5 @@
 
   home.file = {
     ".config/ghostty/config".source = ./programs/ghostty/config;
-  };
+  } // import ./programs/pi { inherit config; };
 }
