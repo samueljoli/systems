@@ -231,10 +231,11 @@ let
   statuscolumn-nvim = pkgs.vimUtils.buildVimPlugin {
     name = "statuscolumn-nvim";
     src = pkgs.fetchFromGitHub {
-      owner = "JuanBaut";
+      # Original JuanBaut/statuscolumn.nvim was deleted upstream; use the fork.
+      owner = "coreyb-git";
       repo = "statuscolumn.nvim";
-      rev = "36cbd5933c7bfe8e6973c5eef445484f29dce6a6";
-      sha256 = "sha256-X+vrQHrxMgH3mB7qRQiutp/eAShVEy8aJBGMEm0KQ7U=";
+      rev = "6603e496631837b7a816565d34497409ee2e99d0";
+      sha256 = "sha256-r3EIpvwQCmMKZjCHZTemwB0s43lBWnpXHqrRzio42Ng=";
     };
   };
   tint-nvim = pkgs.vimUtils.buildVimPlugin {
