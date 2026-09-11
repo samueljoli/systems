@@ -17,6 +17,7 @@ rec {
         "${inputs.nixpkgs}/nixos/modules/installer/sd-card/sd-image-aarch64.nix"
         inputs.nixos-hardware.nixosModules.raspberry-pi-4
         ../../modules/nixos/common.nix
+        ../../modules/nixos/rpi-boot.nix
         ../../modules/nixos/ssh.nix
         ../../modules/nixos/tailscale.nix
         ../../modules/nixos/netdata.nix
