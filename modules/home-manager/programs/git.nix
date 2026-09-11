@@ -33,5 +33,5 @@
   lfs = {
     enable = true;
   };
-  package = pkgs.gitAndTools.gitFull;
+  package = pkgs.gitFull;
 }
