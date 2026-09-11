@@ -1,0 +1,38 @@
+# sops recipient rules: who can decrypt which secrets.
+#
+# `age` anchors below are public keys. Two kinds of recipient:
+#   - admin  : your key on the Mac (~/.config/sops/age/keys.txt). Lets you
+#              edit/re-encrypt secrets from your laptop.
+#   - nodeN  : each CM4's age key, DERIVED FROM ITS SSH HOST KEY once the node
+#              has booted:
+#                ssh-keyscan -t ed25519 <node-ip> | nix shell nixpkgs#ssh-to-age -c ssh-to-age
+#              A node can only decrypt /run/secrets after its key is added here
+#              AND the secret file is re-encrypted (`sops updatekeys <file>`).
+#
+# After changing recipients, re-encrypt existing files:
+#   nix shell nixpkgs#sops -c sops updatekeys secrets/common.yaml
+keys:
+  - &admin age1puc22falqdd4axtk2nv3adwlst07r02vardj3ksrqk5t2y3jeckq0nckve
+  # Fill these in after each node's first boot (see command above):
+  # - &node1 age1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  # - &node2 age1...
+  # - &node3 age1...
+  # - &node4 age1...
+
+creation_rules:
+  # Fleet-wide secrets readable by the admin and every node.
+  - path_regex: secrets/common\.yaml$
+    key_groups:
+      - age:
+          - *admin
+          # - *node1
+          # - *node2
+          # - *node3
+          # - *node4
+
+  # Per-node secrets: admin + that one node.
+  - path_regex: secrets/node1\.yaml$
+    key_groups:
+      - age:
+          - *admin
+          # - *node1
