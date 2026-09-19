@@ -10,10 +10,8 @@ let
     [
       difftastic
       gh
-    ]
-    ++ (with gitAndTools; [
       diff-so-fancy
-    ])
+    ]
   );
 
   infraTools = with pkgs; [
