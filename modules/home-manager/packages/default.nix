@@ -3,6 +3,7 @@
 let
   buildTools = with pkgs; [
     lld
+    ffmpeg
   ];
 
   gitTools = (
