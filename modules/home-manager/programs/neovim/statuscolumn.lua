@@ -1,4 +1,2 @@
-require("statuscolumn").setup({
-	enable_border = true,
-	gradient_hl = "PreProc",
-})
+-- statuscolumn.nvim configures itself when loaded.
+-- The current fork does not expose a setup() function.
