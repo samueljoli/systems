@@ -4,6 +4,7 @@ let
   buildTools = with pkgs; [
     lld
     ffmpeg
+    yt-dlp
   ];
 
   gitTools = (

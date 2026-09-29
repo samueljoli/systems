@@ -85,3 +85,14 @@ function dev { # Convenience method for quickly creating a flake
 function docker-clean {
   docker system prune -a -f --volumes
 }
+
+# Download a YouTube video as an MP3 file.
+# Usage: 2mp3 <youtube-url>
+# Output: $HOME/Downloads/<title>.mp3
+function 2mp3() {
+  yt-dlp \
+    --extractor-args 'youtube:player_client=android' \
+    -x --audio-format mp3 \
+    -o "$HOME/Downloads/%(title)s.%(ext)s" \
+    "$1"
+}
