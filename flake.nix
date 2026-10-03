@@ -55,7 +55,7 @@
   outputs =
     inputs:
     let
-      username = "sjoli";
+      username = "samueljoli";
       system = "aarch64-darwin";
       rebuild = pkgs.writeShellScriptBin "rebuild" (builtins.readFile ./scripts/rebuild.sh);
       vim_pkg = pkgs.writeShellScriptBin "vim_pkg" ''
