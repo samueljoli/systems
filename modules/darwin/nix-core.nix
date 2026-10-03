@@ -1,10 +1,6 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ]; # enable flakes globally
-
-  nix.package = pkgs.nix;
+  # Determinate manages the Nix installation and daemon.
+  nix.enable = false;
 }
