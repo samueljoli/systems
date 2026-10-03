@@ -30,6 +30,7 @@
     "charles"
     "docker"
     "ghostty"
+    "thebrowsercompany-dia"
     "little-snitch"
     "lulu"
     "micro-snitch"
