@@ -9,5 +9,5 @@ nix build "$flake_ref#darwinConfigurations.@machine@.system" \
   --extra-experimental-features "nix-command flakes"
 
 # Apply the configuration
-./result/sw/bin/darwin-rebuild switch --flake "$flake_ref#@machine@"
+sudo ./result/sw/bin/darwin-rebuild switch --flake "$flake_ref#@machine@"
 
