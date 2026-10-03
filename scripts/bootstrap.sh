@@ -11,3 +11,6 @@ nix build "$flake_ref#darwinConfigurations.@machine@.system" \
 # Apply the configuration
 sudo ./result/sw/bin/darwin-rebuild switch --flake "$flake_ref#@machine@"
 
+# Apply the user-level Home Manager configuration.
+./result/sw/bin/home-manager switch --flake "$flake_ref"
+
