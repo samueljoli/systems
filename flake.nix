@@ -22,6 +22,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    agent-skills = {
+      url = "github:samueljoli/skills";
+      flake = false;
+    };
     neovim-nightly-overlay = {
       url = "github:nix-community/neovim-nightly-overlay";
     };

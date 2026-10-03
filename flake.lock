@@ -21,6 +21,22 @@
         "type": "github"
       }
     },
+    "agent-skills": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1791056434,
+        "narHash": "sha256-ck6lTbBfP+8yBZV6mZ9NRz8nSxY3zmHz20Fl3fBsS3c=",
+        "owner": "samueljoli",
+        "repo": "skills",
+        "rev": "41b3c22e64d7dbfc89f7b173a8199bb3b80a00f3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "samueljoli",
+        "repo": "skills",
+        "type": "github"
+      }
+    },
     "baouncer": {
       "inputs": {
         "flake-utils": "flake-utils_3",
@@ -844,6 +860,7 @@
     "root": {
       "inputs": {
         "achitek": "achitek",
+        "agent-skills": "agent-skills",
         "baouncer": "baouncer",
         "claude-code": "claude-code",
         "home-manager": "home-manager",

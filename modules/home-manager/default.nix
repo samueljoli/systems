@@ -46,5 +46,10 @@
 
   home.file = {
     ".config/ghostty/config".source = ./programs/ghostty/config;
-  } // import ./programs/pi { inherit config; };
+    ".agents/skills" = {
+      source = "${inputs.agent-skills}/skills";
+      recursive = true;
+    };
+  }
+  // import ./programs/pi { inherit config; };
 }
