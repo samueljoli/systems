@@ -288,8 +288,8 @@ let
     src = pkgs.fetchFromGitHub {
       owner = "romgrk";
       repo = "barbar.nvim";
-      rev = "807bede7ef1d8e2ac5f108e9ac8123b1e2d321e3";
-      sha256 = "sha256-RXeuN19snH7queItuxfeh2EeGKW18xsSfA2xVAenrhM=";
+      rev = "337ecfadb8bf005050990bf2f624dc4fc828dabd";
+      sha256 = "sha256-Vnr3HVwZYxlkVzBRIS3F7aEuKvrTz4cyzbYsy/mtFuc=";
     };
     nvimSkipModules = [
       "bufferline.utils"

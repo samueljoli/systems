@@ -7,5 +7,5 @@
     enable = true;
   };
   enableCompletion = true;
-  initExtra = (builtins.readFile ./init.sh);
+  initContent = (builtins.readFile ./init.sh);
 }

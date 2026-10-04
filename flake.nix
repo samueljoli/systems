@@ -65,7 +65,7 @@
       pkgs = import inputs.nixpkgs { inherit system; };
       utils = import ./utils { inherit pkgs; };
       nix-lsp-server = pkgs.nil;
-      nixfmt-rfc-style = inputs.nixpkgs.legacyPackages.${system}.nixfmt-rfc-style;
+      nixfmt = pkgs.nixfmt;
       machines = import ./machines {
         inherit inputs;
         inherit username;
@@ -84,7 +84,7 @@
           rebuild
           vim_pkg
           nix-lsp-server
-          nixfmt-rfc-style
+          nixfmt
           pkgs.lua-language-server
           pkgs.just
           # For scripting with node
@@ -96,6 +96,6 @@
 
       apps.${system} = machines.forEach utils.generateApp;
 
-      formatter.${system} = nixfmt-rfc-style;
+      formatter.${system} = nixfmt;
     };
 }

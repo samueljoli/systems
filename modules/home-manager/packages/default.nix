@@ -26,7 +26,7 @@ let
     devenv
     fh
     flake-checker
-    nixfmt-rfc-style
+    nixfmt
     nixpkgs-fmt
     nix-prefetch-github
   ];

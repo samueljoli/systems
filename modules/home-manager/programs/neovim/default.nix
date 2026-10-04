@@ -1,12 +1,14 @@
 { inputs, pkgs }:
 {
   enable = true;
-  package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
+  package = inputs.neovim-nightly-overlay.packages.${pkgs.stdenv.hostPlatform.system}.default;
   defaultEditor = true;
+  withRuby = true;
+  withPython3 = true;
   viAlias = true;
   vimAlias = true;
   vimdiffAlias = true;
-  extraLuaConfig = ''
+  initLua = ''
     ${builtins.readFile ./rustaceanvim.lua}
     ${builtins.readFile ./options.lua}
     ${builtins.readFile ./keymaps.lua}

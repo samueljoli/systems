@@ -12,6 +12,11 @@
 
   git = import ./git.nix { inherit pkgs; };
 
+  delta = {
+    enable = true;
+    enableGitIntegration = true;
+  };
+
   direnv = {
     enable = true;
     enableZshIntegration = true;

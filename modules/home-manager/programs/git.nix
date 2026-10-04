@@ -2,12 +2,11 @@
 
 {
   enable = true;
-  userName = "Samuel Joli";
-  userEmail = "samuel.joli.ftn@gmail.com";
-  delta = {
-    enable = true;
-  };
-  extraConfig = {
+  settings = {
+    user = {
+      name = "Samuel Joli";
+      email = "samuel.joli.ftn@gmail.com";
+    };
     core = {
       editor = "nvim";
       whitespace = "trailing-space,space-before-tab";
@@ -16,9 +15,9 @@
     commit.gpgsign = true;
     init.defaultBranch = "main";
     protocol.keybase.allow = "always";
-    pull.rebase = "false";
-    push.autoSetupBranch = "true";
-    # user = { signingkey = "1BF86B7AE4343C5F"; };
+    pull.rebase = false;
+    push.autoSetupBranch = true;
+    # user.signingKey = "~/.ssh/id_ed25519.pub";
   };
   ignores = [
     ".cache/"
