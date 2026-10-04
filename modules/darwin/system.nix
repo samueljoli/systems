@@ -15,9 +15,11 @@
 
   system.defaults.menuExtraClock.Show24Hour = true;
 
-  system.defaults.NSGlobalDomain.InitialKeyRepeat = 10; # How long you must hold down the key before it starts repeating.
+  system.defaults.NSGlobalDomain.InitialKeyRepeat = 10; # Fastest supported delay before key repeat starts.
 
-  system.defaults.NSGlobalDomain.KeyRepeat = 1; # How fast it repeats once it starts.
+  system.defaults.NSGlobalDomain.KeyRepeat = 1; # Fastest supported key repeat rate.
+
+  system.defaults.NSGlobalDomain."com.apple.swipescrolldirection" = false; # Disable natural scrolling: swipe down to scroll down.
 
   system.defaults.dock.wvous-tl-corner = 2; # Hot corner action for top left corner → Mission Control
 
