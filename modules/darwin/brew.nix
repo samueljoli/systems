@@ -28,9 +28,9 @@
   homebrew.casks = [
     "1password"
     "charles"
+    "codex"
     "docker"
     "ghostty"
-    "thebrowsercompany-dia"
     "little-snitch"
     "lulu"
     "micro-snitch"
@@ -38,7 +38,7 @@
     "shortcat"
     "shottr"
     "tableplus"
-    # "tailscale"
-    # "zen-browser"
+    "tailscale"
+    "thebrowsercompany-dia"
   ];
 }
