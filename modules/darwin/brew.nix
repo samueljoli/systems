@@ -34,6 +34,7 @@
     "little-snitch"
     "lulu"
     "micro-snitch"
+    "raycast"
     "shortcat"
     "shottr"
     "tableplus"
