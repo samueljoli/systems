@@ -17,7 +17,7 @@
     protocol.keybase.allow = "always";
     pull.rebase = false;
     push.autoSetupBranch = true;
-    # user.signingKey = "~/.ssh/id_ed25519.pub";
+    user.signingKey = "~/.ssh/id_ed25519.pub";
   };
   ignores = [
     ".cache/"

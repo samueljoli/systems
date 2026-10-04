@@ -19,7 +19,9 @@
 
   system.defaults.NSGlobalDomain.KeyRepeat = 1; # Fastest supported key repeat rate.
 
-  system.defaults.NSGlobalDomain."com.apple.swipescrolldirection" = false; # Disable natural scrolling: swipe down to scroll down.
+  system.defaults.NSGlobalDomain.ApplePressAndHoldEnabled = false; # Prefer key repeat over accent popovers.
+
+  system.defaults.NSGlobalDomain."com.apple.swipescrolldirection" = false; # Disable natural scrolling.
 
   system.defaults.dock.wvous-tl-corner = 2; # Hot corner action for top left corner → Mission Control
 
