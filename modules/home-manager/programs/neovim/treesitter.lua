@@ -1,66 +1,70 @@
-require("nvim-treesitter.install").prefer_git = true
+require("nvim-treesitter").setup({})
 
-require("nvim-treesitter.configs").setup({
-	sync_install = false,
-	highlight = {
-		enable = true,
-		additional_vim_regex_highlighting = false,
+vim.api.nvim_create_autocmd("FileType", {
+	callback = function(args)
+		pcall(vim.treesitter.start, args.buf)
+	end,
+})
+
+require("nvim-treesitter-textobjects").setup({
+	select = {
+		lookahead = true,
+		include_surrounding_whitespace = true,
 	},
-	incremental_selection = {
-		enable = true,
-		keymaps = {
-			init_selection = "<c-space>", -- set to `false` to disable one of the mappings
-			node_incremental = "<c-space>",
-			scope_incremental = "<c-s>",
-			node_decremental = "<c-backspace>",
-		},
-	},
-	textobjects = {
-		select = {
-			enable = true,
-			lookahead = true,
-			keymaps = {
-				["of"] = { query = "@function.outer", desc = "Select inner part of a function" },
-				["if"] = { query = "@function.inner", desc = "Select outter part of a function" },
-				["ic"] = { query = "@class.inner", desc = "Select inner part of a class region" },
-				["la"] = { query = "@assignment.lhs", desc = "Select left hand assignment" },
-				["ra"] = { query = "@assignment.rhs", desc = "Select right hand assignment" },
-				["ia"] = { query = "@assignment.inner", desc = "Select inner assignment" },
-				["oa"] = { query = "@assignment.outer", desc = "Select outer assignment" },
-				["os"] = { query = "@statement.outer", desc = "Select outer statement" },
-				-- You can also use captures from other query groups like `locals.scm`
-				["as"] = { query = "@scope", query_group = "locals", desc = "Select language scope" },
-			},
-			include_surrounding_whitespace = true,
-		},
-		move = {
-			enable = true,
-			set_jumps = true, -- whether to set jumps in the jumplist
-			goto_next_start = {
-				["ff"] = "@function.outer",
-			},
-			goto_next_end = {
-				["]F"] = "@function.outer",
-				["]["] = "@class.outer",
-			},
-			goto_previous_start = {
-				["FF"] = "@function.outer",
-				["[["] = "@class.outer",
-			},
-			goto_previous_end = {
-				["[F"] = "@function.outer",
-				["[]"] = "@class.outer",
-			},
-			goto_next = {
-				["]c"] = "@conditional.outer",
-			},
-			goto_previous = {
-				["[c"] = "@conditional.outer",
-			},
-		},
+	move = {
+		set_jumps = true,
 	},
 })
 
+local select = require("nvim-treesitter-textobjects.select")
+local move = require("nvim-treesitter-textobjects.move")
+
+local select_objects = {
+	["of"] = "@function.outer",
+	["if"] = "@function.inner",
+	["ic"] = "@class.inner",
+	["la"] = "@assignment.lhs",
+	["ra"] = "@assignment.rhs",
+	["ia"] = "@assignment.inner",
+	["oa"] = "@assignment.outer",
+	["os"] = "@statement.outer",
+	["as"] = { query = "@scope", query_group = "locals" },
+}
+
+for key, object in pairs(select_objects) do
+	local query = object
+	local query_group = "textobjects"
+
+	if type(object) == "table" then
+		query = object.query
+		query_group = object.query_group
+	end
+
+	vim.keymap.set({ "x", "o" }, key, function()
+		select.select_textobject(query, query_group)
+	end, { desc = "Select " .. query })
+end
+
+local moves = {
+	["ff"] = { "goto_next_start", "@function.outer" },
+	["]F"] = { "goto_next_end", "@function.outer" },
+	["]["] = { "goto_next_end", "@class.outer" },
+	["FF"] = { "goto_previous_start", "@function.outer" },
+	["[["] = { "goto_previous_start", "@class.outer" },
+	["[F"] = { "goto_previous_end", "@function.outer" },
+	["[]"] = { "goto_previous_end", "@class.outer" },
+	["]c"] = { "goto_next", "@conditional.outer" },
+	["[c"] = { "goto_previous", "@conditional.outer" },
+}
+
+for key, move_config in pairs(moves) do
+	local action = move_config[1]
+	local query = move_config[2]
+	vim.keymap.set({ "n", "x", "o" }, key, function()
+		move[action](query, "textobjects")
+	end, { desc = "Move to " .. query })
+end
+
 require("treesitter-context").setup({
-	max_lines = 1, -- How many lines the window should span. Values <= 0 mean no limit.
+	max_lines = 1,
 })

@@ -508,19 +508,9 @@ let
     src = pkgs.fetchFromGitHub {
       owner = "nvim-treesitter";
       repo = "nvim-treesitter-textobjects";
-      rev = "ab0950c53d1ae04da8e488aa762b450d5241dca2";
-      sha256 = "sha256-fOE9KAFWcd2ptpecrW6AqXFZeXa7SKqWGg129LQlmes=";
+      rev = "5c7b0263797dfd1bd6202f2b219f3b53a80b2187";
+      sha256 = "sha256-5f2oiz/c/7/cIj+AUaFuB+sm7ZAfwoQeY4r3+XfUDrI=";
     };
-    nvimSkipModules = [
-      "nvim-treesitter-textobjects"
-      "nvim-treesitter.textobjects.shared"
-      "nvim-treesitter.textobjects.move"
-      "nvim-treesitter.textobjects.swap"
-      "nvim-treesitter.textobjects.lsp_interop"
-      "nvim-treesitter.textobjects.attach"
-      "nvim-treesitter.textobjects.repeatable_move"
-      "nvim-treesitter.textobjects.select"
-    ];
   };
   nvim-web-devicons = pkgs.vimUtils.buildVimPlugin {
     name = "nvim-web-devicons";
