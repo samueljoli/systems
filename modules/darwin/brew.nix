@@ -28,7 +28,7 @@
   homebrew.casks = [
     "1password"
     "charles"
-    "codex"
+    "chatgpt"
     "docker"
     "ghostty"
     "little-snitch"
