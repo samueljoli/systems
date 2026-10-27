@@ -46,6 +46,7 @@
 
   home.file = {
     ".config/ghostty/config".source = ./programs/ghostty/config;
+    ".config/rex/init.lua".source = ./programs/rex/init.lua;
     ".agents/skills" = {
       source = "${inputs.agent-skills}/skills";
       recursive = true;
