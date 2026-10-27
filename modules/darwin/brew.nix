@@ -29,7 +29,7 @@
     "1password"
     "charles"
     "chatgpt"
-    "docker"
+    "docker-desktop"
     "ghostty"
     "little-snitch"
     "lulu"
@@ -38,7 +38,7 @@
     "shortcat"
     "shottr"
     "tableplus"
-    "tailscale"
+    "tailscale-app"
     "thebrowsercompany-dia"
   ];
 }
