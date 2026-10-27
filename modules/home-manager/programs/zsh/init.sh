@@ -1,5 +1,7 @@
 t () { mkdir -p "$(dirname "$1")" && touch "$1" ; }
 
+[[ -r "$HOME/.zprofile.local" ]] && source "$HOME/.zprofile.local"
+
 # Aliases
 alias l='ls -lah'
 alias oa="open -a"
@@ -96,3 +98,4 @@ function 2mp3() {
     -o "$HOME/Downloads/%(title)s.%(ext)s" \
     "$1"
 }
+
