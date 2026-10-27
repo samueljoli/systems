@@ -5,7 +5,7 @@
   ...
 }:
 rec {
-  hostname = "lakay-air";
+  hostname = "lakay-air-2";
   darwinConfiguration =
     inputs:
     inputs.nix-darwin.lib.darwinSystem {
