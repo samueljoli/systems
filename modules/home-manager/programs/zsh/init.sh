@@ -88,6 +88,12 @@ function docker-clean {
   docker system prune -a -f --volumes
 }
 
+# Rex sets this only inside terminals it opens. Keep its CLI ahead of any
+# fixed PATH assembled by Nix or other shell startup files.
+if [ -n "$REX_BIN_DIR" ]; then
+  export PATH="$REX_BIN_DIR:$PATH"
+fi
+
 # Download a YouTube video as an MP3 file.
 # Usage: 2mp3 <youtube-url>
 # Output: $HOME/Downloads/<title>.mp3
