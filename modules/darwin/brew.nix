@@ -21,6 +21,7 @@
   homebrew.enable = true;
 
   homebrew.brews = [
+    "countdown"
     "libusb"
     "pkg-config"
   ];
