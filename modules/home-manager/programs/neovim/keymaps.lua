@@ -15,6 +15,9 @@ vim.keymap.set("n", "<C-h>", ":wincmd h<CR>", { noremap = true, desc = "Move to 
 vim.keymap.set("n", "<C-l>", ":wincmd l<CR>", { noremap = true, desc = "Move to next buffer" })
 
 vim.keymap.set("n", "<leader><Esc>", ":exit<CR>", { noremap = true, desc = "Close vim", silent = true })
+vim.keymap.set("n", "<leader>yp", function()
+  vim.fn.setreg("+", vim.fn.expand("%:p"))
+end, { noremap = true, desc = "Yank current file path" })
 
 -- TODO: Fix the issue with always pressing the record button that then turns off autocomplete
 --
