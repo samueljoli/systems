@@ -8,6 +8,7 @@
     "npm:pi-markdown-preview",
     "npm:pi-web-access",
     "npm:pi-youtube",
+    "npm:pi-claude-bridge",
     "npm:@earendil-works/pi-voice"
   ]
 }
