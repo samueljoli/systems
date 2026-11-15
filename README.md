@@ -2,27 +2,46 @@
   <p align="center">Systems 🪐</p>
 </h1>
 
-<p align="center"><a href="https://golang.org/">Nix</a> flake for declaratively managing and configuring my systems.</p>
+<p align="center"><a href="https://nixos.org/">Nix</a> flake for declaratively managing and configuring my systems.</p>
 
 ---
 
 ![macOS](https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=macos&logoColor=F0F0F0)
 
-## Bootstraping
+## Install [Determinate Nix](https://github.com/DeterminateSystems/nix-installer)
+
+```bash
+curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
+```
 
 > [!NOTE]
-> The only prerequisite for bootstrapping is [Determinate Systems](https://determinate.systems/) [Nix](https://docs.determinate.systems/determinate-nix/). [direnv](https://direnv.net/) is optional and provides automatic access to the development environment.
+> Determinate Nix enables [flakes](https://nixos.wiki/wiki/Flakes) by default and manages the Nix installation. Open a new shell after installation if `nix` is not yet available. Bootstrapping requires an Apple Silicon Mac and administrator access for `sudo`. [direnv](https://direnv.net/) is optional and provides automatic access to the development environment.
 
-**Run this on a new machine:**
+## Bootstrap
+
+Run this on a new Mac:
 
 ```bash
 nix run github:samueljoli/systems#machine-name
 ```
 
-> run `just machines` to list available host machines
+> Run `just machines` to list available host machines.
 
-This builds and activates the macOS system configuration, applies the Home Manager configuration,
-and installs the configured Homebrew packages and applications.
+This builds and activates the macOS system configuration, applies the Home Manager configuration, and installs the configured Homebrew packages and applications.
+
+To bootstrap a checkout instead of the GitHub revision:
+
+```bash
+nix run .#machine-name
+```
+
+From another directory, point the command at a local checkout with:
+
+```bash
+SYSTEMS_FLAKE=/path/to/systems nix run .#machine-name
+```
+
+The machine hostname becomes both the Darwin configuration name and the bootstrap command name.
 
 ## Configuration model
 
@@ -45,8 +64,6 @@ To add another Mac:
 nix run .#machine-name
 ```
 
-The machine hostname becomes both the Darwin configuration name and the bootstrap command name.
-
 ## Development environment
 
 This repository uses [direnv](https://direnv.net/) to load the Nix development shell automatically through `.envrc`.
@@ -65,3 +82,6 @@ If you do not use direnv, enter the same environment manually with:
 nix develop
 ```
 
+## See also
+
+[Wiki](https://github.com/samueljoli/systems/wiki)
