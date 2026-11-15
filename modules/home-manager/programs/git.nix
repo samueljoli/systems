@@ -17,6 +17,7 @@
     protocol.keybase.allow = "always";
     pull.rebase = false;
     push.autoSetupBranch = true;
+    push.autoSetupRemote = true;
     user.signingKey = "~/.ssh/id_ed25519.pub";
   };
   ignores = [
