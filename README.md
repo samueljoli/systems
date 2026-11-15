@@ -64,6 +64,20 @@ To add another Mac:
 nix run .#machine-name
 ```
 
+## Standalone Neovim application
+
+The Neovim configuration is also exposed as an independent flake package. Run it
+without activating the complete system configuration with:
+
+```bash
+nix run .#neovim
+```
+
+The standalone package includes the Nix-pinned plugins, Tree-sitter grammars,
+language servers, formatters, and command-line tools used by the configuration.
+The Home Manager configuration and the standalone package share the same Lua and
+plugin definitions.
+
 ## Development environment
 
 This repository uses [direnv](https://direnv.net/) to load the Nix development shell automatically through `.envrc`.

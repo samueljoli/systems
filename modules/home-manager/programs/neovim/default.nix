@@ -1,45 +1,16 @@
 { inputs, pkgs }:
+let
+  common = import ./shared.nix { inherit inputs pkgs; };
+in
 {
   enable = true;
-  package = inputs.neovim-nightly-overlay.packages.${pkgs.stdenv.hostPlatform.system}.default;
+  inherit (common) package extraLuaPackages;
   defaultEditor = true;
   withRuby = true;
   withPython3 = true;
   viAlias = true;
   vimAlias = true;
   vimdiffAlias = true;
-  initLua = ''
-    ${builtins.readFile ./rustaceanvim.lua}
-    ${builtins.readFile ./options.lua}
-    ${builtins.readFile ./keymaps.lua}
-    ${builtins.readFile ./lsp.lua}
-    ${builtins.readFile ./achitek.lua}
-    ${builtins.readFile ./octo.lua}
-    ${builtins.readFile ./cyberpunk.lua}
-    ${builtins.readFile ./tokyo_night.lua}
-    ${builtins.readFile ./treesitter.lua}
-    ${builtins.readFile ./hop.lua}
-    ${builtins.readFile ./telescope.lua}
-    ${builtins.readFile ./yazi.lua}
-    ${builtins.readFile ./comment.lua}
-    ${builtins.readFile ./gitsigns.lua}
-    ${builtins.readFile ./colorizer.lua}
-    ${builtins.readFile ./autopairs.lua}
-    ${builtins.readFile ./cmp.lua}
-    ${builtins.readFile ./heirline.lua}
-    ${builtins.readFile ./lazydev.lua}
-    ${builtins.readFile ./conform.lua}
-    ${builtins.readFile ./grug.lua}
-    ${builtins.readFile ./tint.lua}
-    ${builtins.readFile ./statuscolumn.lua}
-    ${builtins.readFile ./barbar.lua}
-    ${builtins.readFile ./crates.lua}
-    ${builtins.readFile ./neotest.lua}
-    ${builtins.readFile ./claude.lua}
-    ${builtins.readFile ./todo-comments.lua}
-  '';
-
-  plugins = import ./plugins/default.nix { inherit inputs pkgs; };
-
-  extraLuaPackages = ps: [ ps.jsregexp ];
+  initLua = common.initLua;
+  plugins = common.plugins;
 }
