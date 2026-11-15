@@ -29,6 +29,7 @@
     neovim-nightly-overlay = {
       url = "github:nix-community/neovim-nightly-overlay";
     };
+    mnw.url = "github:Gerg-L/mnw";
     baouncer = {
       url = "github:lalilul3lo/baouncer";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -71,6 +72,9 @@
         inherit username;
         inherit system;
       };
+      neovim = inputs.mnw.lib.wrap {
+        inherit inputs pkgs;
+      } ./modules/home-manager/programs/neovim/config.nix;
 
     in
     machines.forEach (machine: {
@@ -94,7 +98,14 @@
         ];
       };
 
-      apps.${system} = machines.forEach utils.generateApp;
+      packages.${system}.neovim = neovim;
+
+      apps.${system} = machines.forEach utils.generateApp // {
+        neovim = {
+          type = "app";
+          program = "${neovim}/bin/nvim";
+        };
+      };
 
       formatter.${system} = nixfmt;
     };

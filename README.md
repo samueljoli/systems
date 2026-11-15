@@ -64,6 +64,37 @@ To add another Mac:
 nix run .#machine-name
 ```
 
+## Standalone Neovim application
+
+The Neovim configuration is also exposed as an independent flake package. It
+currently supports Apple Silicon macOS (`aarch64-darwin`).
+
+From a local checkout:
+
+```bash
+git clone https://github.com/samueljoli/systems.git
+cd systems
+nix run .#neovim
+```
+
+Or run it directly from GitHub:
+
+```bash
+nix run github:samueljoli/systems#neovim
+```
+
+To install it into your Nix profile instead:
+
+```bash
+nix profile install github:samueljoli/systems#neovim
+nvim
+```
+
+The standalone package includes the Nix-pinned plugins, Tree-sitter grammars,
+language servers, formatters, and command-line tools used by the configuration.
+The Home Manager configuration and the standalone package share the same Lua and
+plugin definitions.
+
 ## Development environment
 
 This repository uses [direnv](https://direnv.net/) to load the Nix development shell automatically through `.envrc`.
